@@ -21,10 +21,11 @@ offset_right = 5.0
 color = Color(1.20327e-08, 0, 0.23362, 1)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 3.0
-target_desired_distance = 3.0
+path_desired_distance = 5.0
+target_desired_distance = 5.0
 path_postprocessing = 1
 simplify_epsilon = 0.8
+avoidance_enabled = true
 debug_enabled = true
 
 [node name="path_Timer" type="Timer" parent="."]
@@ -38,5 +39,6 @@ position = Vector2(0, -22)
 [node name="DamageTimer" type="Timer" parent="."]
 wait_time = 0.1
 
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="timeout" from="path_Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]

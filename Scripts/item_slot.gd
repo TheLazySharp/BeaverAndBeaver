@@ -5,11 +5,13 @@ extends Panel
 
 signal dropped_item(item_dropped : ItemData)
 
-var item_quantity: int
-
 func _ready() -> void:
 	update_UI()
-	item_quantity = 1
+
+func _process(_delta: float) -> void:
+	if item.quantity == 0:
+		icon.modulate = Color(modulate,0.5)
+	else: icon.modulate = Color(modulate,1)
 
 func update_UI() -> void:
 	if not item:
@@ -19,7 +21,7 @@ func update_UI() -> void:
 	tooltip_text = item.item_name
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
-	if item == null:
+	if item == null or item.quantity == 0:
 		return
 	
 	var preview = duplicate()
@@ -34,17 +36,20 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	emit_signal("dropped_item", item)
 	return self
 
-func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
-	if item_quantity > 0:
-		return true
-	else: return false
-	
-func _drop_data(_at_position: Vector2, data: Variant) -> void:
-	var tmp = item 
-	item = data.item
-	data.item = tmp
-	icon.show()
-	data.show()
-	update_UI()
-	data.update_UI()
-	print("item dropped into inventory")
+
+#=========== FOR MOVING ITEM INSIDE THE INVENTORY ==============================
+
+#func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
+	#if item_quantity > 0:
+		#return true
+	#else: return false
+	#
+#func _drop_data(_at_position: Vector2, data: Variant) -> void:
+	#var tmp = item 
+	#item = data.item
+	#data.item = tmp
+	#icon.show()
+	#data.show()
+	#update_UI()
+	#data.update_UI()
+	#print("item dropped into inventory")
