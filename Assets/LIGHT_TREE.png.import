@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6qr2q1f85sj2"
-path="res://.godot/imported/BEAVER_01-sheet.png-31786a11d734227cfa2f93f3faf6b14b.ctex"
+uid="uid://x4w0gt0enksm"
+path="res://.godot/imported/LIGHT_TREE.png-270f675b037859a8d8ef464e3a01ceac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BEAVER_01-sheet.png"
-dest_files=["res://.godot/imported/BEAVER_01-sheet.png-31786a11d734227cfa2f93f3faf6b14b.ctex"]
+source_file="res://Assets/LIGHT_TREE.png"
+dest_files=["res://.godot/imported/LIGHT_TREE.png-270f675b037859a8d8ef464e3a01ceac.ctex"]
 
 [params]
 

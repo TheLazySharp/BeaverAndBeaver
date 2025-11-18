@@ -1,24 +1,28 @@
 extends CharacterBody2D
 
-var speed: float = 1000
+var speed: float = 40
 @export var max_life: int = 50
-@onready var target: Node2D = $"/root/World/Player"
+@onready var target: Node2D = $"/root/World/BeaverSr"
+var damages_on_player: float = 10
 
 @onready var gm_scene: Node = $"/root/World/game_manager"
+var game_paused:=false
 
 @export var damages_text: PackedScene
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
-@onready var timer: Timer = $path_Timer
+@onready var path_timer: Timer = $path_Timer
 @onready var damages_text_pos = get_node("MarkerDamages")
 
 
 @onready var color_rect = get_node("ColorRect")
-@onready var damage_timer: Timer = $DamageTimer
+@onready var damage_timer: Timer = $DamageTimer_Get
 @onready var base_color: Color
 @onready var current_life: int
 
-var game_paused:=false
+
+var player: Node = null
+@onready var damage_timer_on_player: Timer = $DamageTimer_OnPlayer
 
 func _ready() -> void:
 	randomize()
@@ -27,12 +31,13 @@ func _ready() -> void:
 	current_life = max_life
 	gm_scene.game_paused.connect(_on_game_paused)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not game_paused:
 		if not navigation_agent.is_target_reached():
 			var nav_point_direction = to_local(navigation_agent.get_next_path_position()).normalized()
-			velocity = nav_point_direction * speed * delta
+			velocity = nav_point_direction * speed
 			move_and_slide()
+			
 
 func _process(_delta: float) -> void:
 	if current_life <=0:
@@ -43,19 +48,16 @@ func _process(_delta: float) -> void:
 func _on_timer_timeout() -> void:
 	if navigation_agent.target_position != target.global_position:
 		navigation_agent.target_position = target.global_position
-	timer.start()
+	path_timer.start()
 
 func get_damages(damages: int) -> void:
-	#print("enemy receives : ", damages)
-	damage_timer.start()
-	current_life -= damages
-	color_rect.color= Color("ffffff")
-	var text = damages_text.instantiate()
-	var text_offsetX = RandomNumberGenerator.new().randf_range(-10,10)
-	var text_offsetY = RandomNumberGenerator.new().randf_range(-10,0)
-	text.this_label_text = str(damages)
-	add_child(text)
-	text.global_position = Vector2(damages_text_pos.global_position.x + text_offsetX, damages_text_pos.global_position.y + text_offsetY)
+	if not game_paused:
+		#print("enemy receives : ", damages)
+		damage_timer.start()
+		current_life -= damages
+		color_rect.color= Color("ffffff")
+		display_damages(damages)
+	
 
 func spawn(spawn_position: Vector2):
 	global_position = spawn_position
@@ -65,3 +67,33 @@ func _on_damage_timer_timeout() -> void:
 
 func _on_game_paused(game_on_pause) -> void:
 	game_paused = game_on_pause
+
+
+func _on_hitbox_entered(area: Area2D) -> void:
+	if not area.is_in_group("player"): return
+	#print("ennemy hits player")
+	player = area.get_parent()
+	if "take_damages" in player:
+		player.take_damages(damages_on_player)
+	damage_timer_on_player.start()
+
+
+func _on_hitbox_exited(area: Area2D) -> void:
+	if not area.is_in_group("player"): return
+	#print("ennemy exit player")
+	player = null
+	damage_timer_on_player.stop()
+		
+
+func _on_damage_timer_on_player_timeout() -> void:
+	if player == null: return
+	if "take_damages" in player:
+		player.take_damages(damages_on_player)
+
+func display_damages(damages)-> void:
+	var text = damages_text.instantiate()
+	var text_offsetX = RandomNumberGenerator.new().randf_range(-10,10)
+	var text_offsetY = RandomNumberGenerator.new().randf_range(-10,0)
+	text.this_label_text = str(damages)
+	add_child(text)
+	text.global_position = Vector2(damages_text_pos.global_position.x + text_offsetX, damages_text_pos.global_position.y + text_offsetY)

@@ -26,7 +26,6 @@ func _on_area_hit(_area: Area2D) -> void:
 
 
 func _on_body_hit(body: Node2D) -> void:
-	##vérifier dabord si la fonction existe dans le body
 	if "get_damages" in body:
 		body.get_damages(damages)
 		queue_free()
