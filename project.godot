@@ -15,6 +15,17 @@ run/main_scene="uid://c6msxridefxxd"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 
+[autoload]
+
+player_xp_manager="*res://Autoloads/player_xp_manager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=800
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [dotnet]
 
 project/assembly_name="MyBloodyShooter"
@@ -33,6 +44,7 @@ obstacles=""
 ressources=""
 walls=""
 junior=""
+collectables=""
 
 [input]
 
@@ -103,8 +115,12 @@ go_pack={
 2d_physics/layer_2="ennemy"
 2d_physics/layer_3="bullet"
 2d_physics/layer_4="walls"
-2d_physics/layer_5="junior"
+2d_physics/layer_5="juniorRadar"
 2d_physics/layer_6="ressources"
+2d_physics/layer_7="juniorHit"
+2d_physics/layer_8="healingzone"
+2d_physics/layer_9="collectzones"
+2d_physics/layer_10="collectables"
 
 [rendering]
 

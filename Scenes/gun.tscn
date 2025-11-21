@@ -11,7 +11,7 @@ bullet_scene = ExtResource("2_oqrbh")
 [node name="Sprite" type="ColorRect" parent="."]
 offset_left = -1.0
 offset_top = -2.0
-offset_right = 11.0
+offset_right = 1.0
 offset_bottom = 2.0
 color = Color(0.0146401, 0, 0.81067, 1)
 
@@ -19,6 +19,6 @@ color = Color(0.0146401, 0, 0.81067, 1)
 position = Vector2(12, 0)
 
 [node name="FireRate" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.7
 
 [connection signal="timeout" from="FireRate" to="." method="_on_timer_timeout"]

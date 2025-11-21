@@ -1,10 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://c31g0smlywes2"]
+[gd_scene load_steps=6 format=3 uid="uid://c31g0smlywes2"]
 
 [ext_resource type="Script" uid="uid://b2k0wdgpd2gde" path="res://Scripts/ennemy.gd" id="1_uq27j"]
 [ext_resource type="PackedScene" uid="uid://pej2qquyboig" path="res://Scenes/damages_text.tscn" id="2_gvr15"]
+[ext_resource type="PackedScene" uid="uid://5uh2knats63k" path="res://Scenes/xp_sphere.tscn" id="3_1b0bn"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5im4a"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1b0bn"]
 radius = 5.0
+height = 20.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvr15"]
 radius = 5.0
@@ -16,9 +18,11 @@ collision_layer = 44
 collision_mask = 2
 script = ExtResource("1_uq27j")
 damages_text = ExtResource("2_gvr15")
+xp_scene = ExtResource("3_1b0bn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_5im4a")
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_1b0bn")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -5.0
@@ -47,7 +51,7 @@ wait_time = 0.1
 [node name="Visuals" type="Node" parent="."]
 
 [node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 13
+collision_layer = 77
 collision_mask = 2
 
 [node name="HitShape" type="CollisionShape2D" parent="Hitbox"]
@@ -56,8 +60,9 @@ shape = SubResource("CapsuleShape2D_gvr15")
 debug_color = Color(0.88270926, 0.06722261, 0.79457116, 0.41960785)
 
 [node name="DamageTimer_OnPlayer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.3
 
+[connection signal="tree_exited" from="." to="." method="_on_ennemy_death"]
 [connection signal="timeout" from="path_Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="DamageTimer_Get" to="." method="_on_damage_timer_timeout"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_entered"]

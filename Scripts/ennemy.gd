@@ -1,27 +1,27 @@
 extends CharacterBody2D
 
-var speed: float = 40
-@export var max_life: int = 50
-@onready var target: Node2D = $"/root/World/BeaverSr"
+@export var max_life: int = 10
+@onready var current_life: int
 var damages_on_player: float = 10
+var speed: float = 40
+var player: Node = null
+
+@onready var target: Node2D = $"/root/World/BeaverSr"
 
 @onready var gm_scene: Node = $"/root/World/game_manager"
 var game_paused:=false
 
 @export var damages_text: PackedScene
+@export var xp_scene: PackedScene
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var path_timer: Timer = $path_Timer
 @onready var damages_text_pos = get_node("MarkerDamages")
 
-
 @onready var color_rect = get_node("ColorRect")
 @onready var damage_timer: Timer = $DamageTimer_Get
 @onready var base_color: Color
-@onready var current_life: int
 
-
-var player: Node = null
 @onready var damage_timer_on_player: Timer = $DamageTimer_OnPlayer
 
 func _ready() -> void:
@@ -42,6 +42,10 @@ func _physics_process(_delta: float) -> void:
 func _process(_delta: float) -> void:
 	if current_life <=0:
 		current_life = 0
+		var xp :=xp_scene.instantiate()
+		xp.spawn(global_position)
+		get_parent().add_child(xp)
+		
 		queue_free()
 
 
@@ -70,7 +74,7 @@ func _on_game_paused(game_on_pause) -> void:
 
 
 func _on_hitbox_entered(area: Area2D) -> void:
-	if not area.is_in_group("player"): return
+	if not area.is_in_group("player") and not area.is_in_group("junior"): return #mettre junior dedans
 	#print("ennemy hits player")
 	player = area.get_parent()
 	if "take_damages" in player:
@@ -79,7 +83,7 @@ func _on_hitbox_entered(area: Area2D) -> void:
 
 
 func _on_hitbox_exited(area: Area2D) -> void:
-	if not area.is_in_group("player"): return
+	if not area.is_in_group("player") and not area.is_in_group("junior"): return
 	#print("ennemy exit player")
 	player = null
 	damage_timer_on_player.stop()
@@ -97,3 +101,7 @@ func display_damages(damages)-> void:
 	text.this_label_text = str(damages)
 	add_child(text)
 	text.global_position = Vector2(damages_text_pos.global_position.x + text_offsetX, damages_text_pos.global_position.y + text_offsetY)
+
+
+func _on_ennemy_death() -> void:
+	print("ennemy is dead")

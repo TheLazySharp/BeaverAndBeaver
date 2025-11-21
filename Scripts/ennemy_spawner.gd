@@ -3,8 +3,9 @@ extends Marker2D
 @onready var timer: Timer = $Timer
 @export var ennemy_scene : PackedScene
 
-
 var game_paused:=false
+
+@export var auto_spawn:= true
 
 func _ready() -> void:
 	randomize()
@@ -16,7 +17,7 @@ func create_ennemy(starting_position: Vector2) -> void:
 	print("ennemy created")
 
 func _on_timer_timeout() -> void:
-	if not game_paused:
+	if not game_paused and auto_spawn:
 		var offsetX = RandomNumberGenerator.new().randf_range(-250,250)
 		create_ennemy(Vector2(offsetX,global_position.y))
 

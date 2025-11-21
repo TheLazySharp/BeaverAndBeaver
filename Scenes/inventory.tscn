@@ -23,15 +23,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k1vlg")
 
-[node name="Inventory" type="Panel" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -220.0
+offset_bottom = 320.0
+grow_horizontal = 0
+
+[node name="Inventory" type="Panel" parent="HBoxContainer"]
 z_index = 5
-offset_left = 907.0
-offset_top = 115.0
-offset_right = 1127.0
-offset_bottom = 435.0
+layout_mode = 2
 script = ExtResource("1_0n8tc")
 
-[node name="MarginContainer" type="MarginContainer" parent="Inventory"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Inventory"]
 z_index = 5
 layout_mode = 0
 offset_right = 40.0
@@ -42,20 +47,20 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="GridContainer" type="GridContainer" parent="Inventory/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/Inventory/MarginContainer"]
 z_index = 5
 layout_mode = 2
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 4
 columns = 6
 
-[node name="ItemSlot" type="Panel" parent="Inventory/MarginContainer/GridContainer"]
+[node name="ItemSlot" type="Panel" parent="HBoxContainer/Inventory/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 script = ExtResource("1_k5gp2")
 item = ExtResource("3_k1vlg")
 
-[node name="Icon" type="TextureRect" parent="Inventory/MarginContainer/GridContainer/ItemSlot"]
+[node name="Icon" type="TextureRect" parent="HBoxContainer/Inventory/MarginContainer/GridContainer/ItemSlot"]
 z_index = 6
 layout_mode = 1
 anchors_preset = -1
@@ -68,7 +73,7 @@ grow_vertical = 2
 texture = ExtResource("2_yxepq")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Inventory/MarginContainer/GridContainer/ItemSlot"]
+[node name="Label" type="Label" parent="HBoxContainer/Inventory/MarginContainer/GridContainer/ItemSlot"]
 z_index = 7
 layout_mode = 1
 anchors_preset = 3
@@ -88,13 +93,13 @@ vertical_alignment = 2
 script = ExtResource("7_aqnmd")
 item = ExtResource("3_k1vlg")
 
-[node name="ItemSlot2" type="Panel" parent="Inventory/MarginContainer/GridContainer"]
+[node name="ItemSlot2" type="Panel" parent="HBoxContainer/Inventory/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 script = ExtResource("1_k5gp2")
 item = ExtResource("6_sd8fj")
 
-[node name="Icon" type="TextureRect" parent="Inventory/MarginContainer/GridContainer/ItemSlot2"]
+[node name="Icon" type="TextureRect" parent="HBoxContainer/Inventory/MarginContainer/GridContainer/ItemSlot2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -106,7 +111,7 @@ grow_vertical = 2
 texture = ExtResource("7_trvqw")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Inventory/MarginContainer/GridContainer/ItemSlot2"]
+[node name="Label" type="Label" parent="HBoxContainer/Inventory/MarginContainer/GridContainer/ItemSlot2"]
 z_index = 7
 layout_mode = 1
 anchors_preset = 3
