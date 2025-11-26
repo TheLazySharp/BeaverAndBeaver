@@ -140,8 +140,9 @@ radius = 19.235384
 
 [node name="BeaverSr" type="CharacterBody2D" groups=["player"]]
 z_index = 10
-collision_layer = 40
+collision_mask = 40
 script = ExtResource("1_v0iea")
+semi_auto_shoot = true
 damages_text = ExtResource("5_fkybt")
 
 [node name="Visuals" type="Node2D" parent="."]
@@ -174,7 +175,7 @@ wait_time = 0.3
 one_shot = true
 
 [node name="Hitbox" type="Area2D" parent="." groups=["player"]]
-collision_layer = 2
+collision_mask = 2
 
 [node name="Hitshape" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -15)
@@ -201,8 +202,8 @@ position = Vector2(40, 0)
 position = Vector2(-40, 0)
 
 [node name="HealingZone" type="Area2D" parent="."]
-collision_layer = 64
-collision_mask = 128
+collision_layer = 128
+collision_mask = 64
 
 [node name="HealingWorldArea" type="Node2D" parent="HealingZone"]
 script = ExtResource("9_f1ek2")
@@ -215,9 +216,9 @@ debug_color = Color(0, 0.6487369, 0.18108371, 0.41960785)
 
 [node name="HealingTimer" type="Timer" parent="."]
 
-[node name="CollectZone" type="Area2D" parent="."]
-collision_layer = 512
-collision_mask = 256
+[node name="CollectZone" type="Area2D" parent="." groups=["player"]]
+collision_layer = 256
+collision_mask = 512
 
 [node name="CollectZone" type="CollisionShape2D" parent="CollectZone"]
 position = Vector2(0, -14)

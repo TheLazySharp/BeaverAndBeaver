@@ -193,8 +193,8 @@ radius = 13.0
 
 [node name="BeaverJr" type="CharacterBody2D" groups=["junior"]]
 z_index = 9
-collision_layer = 8
-collision_mask = 64
+collision_layer = 64
+collision_mask = 8
 script = ExtResource("1_lwq6a")
 damages_text = ExtResource("2_3ancc")
 
@@ -218,16 +218,16 @@ position = Vector2(0, 9)
 shape = SubResource("CircleShape2D_evtc8")
 
 [node name="Hitbox" type="Area2D" parent="." groups=["junior"]]
-collision_layer = 130
-collision_mask = 64
+collision_layer = 64
+collision_mask = 130
 
 [node name="Hitshape" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CapsuleShape2D_vn2jn")
 debug_color = Color(0.957027, 0, 0.54408205, 0.41960785)
 
 [node name="Radar" type="Area2D" parent="."]
-collision_layer = 32
-collision_mask = 16
+collision_layer = 16
+collision_mask = 32
 
 [node name="DetectionRange" type="CollisionShape2D" parent="Radar"]
 shape = SubResource("CircleShape2D_lwq6a")
@@ -266,9 +266,9 @@ one_shot = true
 [node name="MarkerDamages" type="Marker2D" parent="."]
 position = Vector2(0, -24)
 
-[node name="CollectZone" type="Area2D" parent="."]
-collision_layer = 512
-collision_mask = 256
+[node name="CollectZone" type="Area2D" parent="." groups=["junior"]]
+collision_layer = 256
+collision_mask = 512
 
 [node name="CollectZone" type="CollisionShape2D" parent="CollectZone"]
 shape = SubResource("CircleShape2D_3ancc")
@@ -281,3 +281,4 @@ debug_color = Color(0.65457684, 0.5179122, 0, 0.41960785)
 [connection signal="timeout" from="FarmingTimer" to="." method="_on_farming_timer_timeout"]
 [connection signal="animation_finished" from="HealthBar/AnimationPlayer" to="HealthBar" method="_on_animation_finished"]
 [connection signal="timeout" from="TakingDamages" to="." method="_on_taking_damages_timeout"]
+[connection signal="area_entered" from="CollectZone" to="." method="_on_collect_zone_entered"]

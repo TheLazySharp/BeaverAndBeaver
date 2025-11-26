@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bex3dw3trmah0" path="res://Scenes/scroller.tscn" id="1_8j60k"]
 [ext_resource type="PackedScene" uid="uid://bfqfkdast3fls" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://dfaqn0xne343x" path="res://Scenes/player_manager.tscn" id="1_axeuq"]
-[ext_resource type="PackedScene" uid="uid://qeeykcnwceiw" path="res://Scenes/selection_wheel.tscn" id="2_1cojt"]
 [ext_resource type="Script" uid="uid://dw15g7jhxhi42" path="res://Scripts/inventory.gd" id="2_axeuq"]
 [ext_resource type="Script" uid="uid://cqpjpm262dhpg" path="res://Scripts/item_slot.gd" id="3_1cojt"]
 [ext_resource type="PackedScene" uid="uid://v787in61o7y6" path="res://Scenes/ennemy_spawner.tscn" id="3_5ukr8"]
@@ -19,14 +18,14 @@
 [ext_resource type="Script" uid="uid://chevpqwyhneed" path="res://Scripts/main_layer.gd" id="8_ikia7"]
 [ext_resource type="PackedScene" uid="uid://xidujoxly1yi" path="res://Scenes/tree_light.tscn" id="9_0fj1v"]
 [ext_resource type="Texture2D" uid="uid://d2kvcvkievhvo" path="res://Assets/STONE.png" id="9_pt3ps"]
+[ext_resource type="PackedScene" uid="uid://qeeykcnwceiw" path="res://Scenes/selection_wheel.tscn" id="11_1cojt"]
 [ext_resource type="Script" uid="uid://b4w00f63jogjg" path="res://Scripts/tilemap_drop.gd" id="11_ikia7"]
 
 [sub_resource type="Environment" id="Environment_0pcbe"]
 background_mode = 3
 glow_enabled = true
 glow_intensity = 1.75
-glow_blend_mode = 1
-glow_hdr_threshold = 0.96
+glow_hdr_threshold = 0.84
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikia7"]
 texture = ExtResource("8_0fj1v")
@@ -1224,12 +1223,6 @@ environment = SubResource("Environment_0pcbe")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="SelectionWheel" parent="CanvasLayer" instance=ExtResource("2_1cojt")]
-visible = false
-outer_radius = 128
-inner_radius = 32.0
-line_width = 1.0
-
 [node name="DropItemToWorld" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
@@ -1346,6 +1339,8 @@ vertical_alignment = 2
 script = ExtResource("7_xbk3s")
 item = ExtResource("8_i4fjy")
 
+[node name="SelectionWheel" parent="CanvasLayer" instance=ExtResource("11_1cojt")]
+
 [node name="game_manager" parent="." instance=ExtResource("1_5ukr8")]
 
 [node name="Scroller" parent="." instance=ExtResource("1_8j60k")]
@@ -1386,7 +1381,6 @@ tile_map_data = PackedByteArray("AAD6/xkAAgAOAAgAAAD6/xoAAgAOAAkAAAD7/xkAAgAPAAg
 tile_set = SubResource("TileSet_e0ngr")
 
 [node name="Ressources" type="TileMapLayer" parent="Land_layers"]
-tile_map_data = PackedByteArray("AAAIABQAAQAAAAAAAQDz/xAAAQAAAAAAAQD9/xwAAQAAAAAAAQA=")
 tile_set = SubResource("TileSet_7yui6")
 
 [node name="Drop" type="TileMapLayer" parent="Land_layers"]

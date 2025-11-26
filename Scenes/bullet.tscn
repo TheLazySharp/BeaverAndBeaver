@@ -7,13 +7,14 @@
 radius = 5.0
 
 [node name="Bullet" type="Area2D" groups=["bullets"]]
-collision_layer = 2
-collision_mask = 4
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_xjght")
 speed = 300.0
 max_range = 300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
 z_index = 10
 rotation = 1.5707964
 texture = ExtResource("2_oduel")

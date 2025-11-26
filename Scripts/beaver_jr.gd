@@ -201,3 +201,8 @@ func display_damages(damages)-> void:
 		text.this_label_text = "- " +str(damages)
 		add_child(text)
 		text.global_position = Vector2(damages_text_pos.global_position.x + text_offsetX, damages_text_pos.global_position.y + text_offsetY)
+
+
+func _on_collect_zone_entered(area: Area2D) -> void:
+	if area.is_in_group("collectables"):
+		player_xp_manager.get_xp(1)

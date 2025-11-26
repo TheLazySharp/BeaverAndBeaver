@@ -14,8 +14,8 @@ height = 20.0
 
 [node name="Ennemy" type="CharacterBody2D" groups=["ennemies"]]
 z_index = 10
-collision_layer = 44
-collision_mask = 2
+collision_layer = 2
+collision_mask = 44
 script = ExtResource("1_uq27j")
 damages_text = ExtResource("2_gvr15")
 xp_scene = ExtResource("3_1b0bn")
@@ -51,8 +51,8 @@ wait_time = 0.1
 [node name="Visuals" type="Node" parent="."]
 
 [node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 77
-collision_mask = 2
+collision_layer = 2
+collision_mask = 77
 
 [node name="HitShape" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -10)
