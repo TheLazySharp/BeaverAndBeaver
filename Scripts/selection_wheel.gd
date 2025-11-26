@@ -12,8 +12,7 @@ const SPRITE_SIZE = Vector2(32,32)
 @export var line_width: float = 5
 
 @export var items : Array[WheelItems]
-var slice_amount:= 6
-
+var total_slots:= 6
 var selection:=0
 #var deadzone:= 0.2 
 #var joy_rotation_speed:= 5.0
@@ -27,8 +26,8 @@ func _draw():
 	draw_circle(Vector2.ZERO,outer_radius,background_color)
 	draw_arc(Vector2.ZERO,inner_radius,0,TAU,50,line_color,line_width,true)
 	
-	for i in (items.size() - 1):
-		var rads = TAU * i / (items.size() - 1)
+	for i in (total_slots):
+		var rads = TAU * i / (total_slots)
 		var point = Vector2.from_angle(rads)
 		#print(i, " / ", rad_to_deg(rads))
 		draw_line(point * inner_radius, point * outer_radius, line_color, line_width, true)
@@ -37,7 +36,7 @@ func _draw():
 
 	for i in range(1,items.size()):
 		@warning_ignore("integer_division")
-		var step = TAU / (items.size() - 1)
+		var step = TAU / (total_slots)
 		var start_rads = step * (i - 1)
 		var end_rads = start_rads + step
 		var mid_rads = (start_rads + end_rads) * 0.5 * - 1
@@ -83,7 +82,7 @@ func joystick_process() -> void :
 		var angle = -fmod(dir.angle(), TAU)
 		if angle <0:
 			angle +=TAU
-		selection = ceil((angle/TAU) * (items.size() - 1))
+		selection = ceil((angle/TAU) * (total_slots))
 		print(selection)
 
 func mouse_process() -> void:
@@ -95,5 +94,5 @@ func mouse_process() -> void:
 			selection = 0
 		else:
 			var mouse_rads = fposmod(mouse_pos.angle() * -1, TAU)
-			selection = round(ceil((mouse_rads / TAU) * (items.size() - 1)))
+			selection = round(ceil((mouse_rads / TAU) * (total_slots)))
 			print(selection)
