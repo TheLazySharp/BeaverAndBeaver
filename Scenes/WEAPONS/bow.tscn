@@ -1,24 +1,25 @@
 [gd_scene load_steps=3 format=3 uid="uid://3g0m43hcvlsk"]
 
 [ext_resource type="Script" uid="uid://dm53cpnuwqyir" path="res://Scripts/gun.gd" id="1_nxj5y"]
-[ext_resource type="PackedScene" uid="uid://bjuws4ysoivbu" path="res://Scenes/bullet.tscn" id="2_oqrbh"]
+[ext_resource type="PackedScene" uid="uid://bjuws4ysoivbu" path="res://Scenes/WEAPONS/bullet.tscn" id="2_oqrbh"]
 
-[node name="Gun" type="Node2D"]
-z_index = 11
+[node name="Bow" type="Node2D"]
+z_index = 20
+z_as_relative = false
+y_sort_enabled = true
 script = ExtResource("1_nxj5y")
 bullet_scene = ExtResource("2_oqrbh")
 
 [node name="Sprite" type="ColorRect" parent="."]
 offset_left = -1.0
-offset_top = -2.0
+offset_top = -4.0
 offset_right = 1.0
-offset_bottom = 2.0
 color = Color(0.0146401, 0, 0.81067, 1)
 
 [node name="FirePoint" type="Marker2D" parent="."]
-position = Vector2(12, 0)
+position = Vector2(0, -6)
 
 [node name="FireRate" type="Timer" parent="."]
-wait_time = 0.7
+wait_time = 0.4
 
-[connection signal="timeout" from="FireRate" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="FireRate" to="." method="_on_fire_rate_timeout"]

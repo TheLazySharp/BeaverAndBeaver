@@ -1,16 +1,16 @@
-[gd_scene load_steps=50 format=4 uid="uid://c6msxridefxxd"]
+[gd_scene load_steps=49 format=4 uid="uid://c6msxridefxxd"]
 
 [ext_resource type="Script" uid="uid://ct3mne72gdm1m" path="res://Scripts/control_drop_data.gd" id="1_0pcbe"]
 [ext_resource type="PackedScene" uid="uid://qfgy5vub100s" path="res://Scenes/game_manager.tscn" id="1_5ukr8"]
 [ext_resource type="PackedScene" uid="uid://bex3dw3trmah0" path="res://Scenes/scroller.tscn" id="1_8j60k"]
 [ext_resource type="PackedScene" uid="uid://bfqfkdast3fls" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://dfaqn0xne343x" path="res://Scenes/player_manager.tscn" id="1_axeuq"]
+[ext_resource type="PackedScene" uid="uid://dpgg0nlelogwr" path="res://Scenes/item_manager.tscn" id="1_yq1aw"]
 [ext_resource type="PackedScene" uid="uid://qeeykcnwceiw" path="res://Scenes/selection_wheel.tscn" id="2_1cojt"]
 [ext_resource type="Script" uid="uid://dw15g7jhxhi42" path="res://Scripts/inventory.gd" id="2_axeuq"]
 [ext_resource type="Script" uid="uid://cqpjpm262dhpg" path="res://Scripts/item_slot.gd" id="3_1cojt"]
 [ext_resource type="PackedScene" uid="uid://v787in61o7y6" path="res://Scenes/ennemy_spawner.tscn" id="3_5ukr8"]
 [ext_resource type="Resource" uid="uid://bdcx24kagdrwh" path="res://Resources/wood.tres" id="4_yq1aw"]
-[ext_resource type="Texture2D" uid="uid://chbyq6op0mitq" path="res://Assets/WOOD.png" id="5_pyn1s"]
 [ext_resource type="FontFile" uid="uid://cy0lbkvt1xb4p" path="res://Fonts/Cute Dino.otf" id="6_no8kt"]
 [ext_resource type="Texture2D" uid="uid://bv4tqwwv7pm5x" path="res://Assets/terrain_tiles_v2.png" id="7_k7acu"]
 [ext_resource type="Script" uid="uid://1t8qggq4muf7" path="res://Scripts/item_quantity_label.gd" id="7_xbk3s"]
@@ -18,7 +18,6 @@
 [ext_resource type="Resource" uid="uid://budr5sdv8v70c" path="res://Resources/stone.tres" id="8_i4fjy"]
 [ext_resource type="Script" uid="uid://chevpqwyhneed" path="res://Scripts/main_layer.gd" id="8_ikia7"]
 [ext_resource type="PackedScene" uid="uid://xidujoxly1yi" path="res://Scenes/tree_light.tscn" id="9_0fj1v"]
-[ext_resource type="Texture2D" uid="uid://d2kvcvkievhvo" path="res://Assets/STONE.png" id="9_pt3ps"]
 [ext_resource type="Script" uid="uid://b4w00f63jogjg" path="res://Scripts/tilemap_drop.gd" id="11_ikia7"]
 
 [sub_resource type="Environment" id="Environment_0pcbe"]
@@ -1220,15 +1219,17 @@ sources/8 = SubResource("TileSetAtlasSource_7yui6")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0pcbe")
 
+[node name="ItemManager" parent="." instance=ExtResource("1_yq1aw")]
+
 [node name="PlayerManager" parent="." instance=ExtResource("1_axeuq")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="SelectionWheel" parent="CanvasLayer" instance=ExtResource("2_1cojt")]
-visible = false
+[node name="SelectionWheel" parent="CanvasLayer" node_paths=PackedStringArray("item_manager") instance=ExtResource("2_1cojt")]
 outer_radius = 128
 inner_radius = 32.0
 line_width = 1.0
+item_manager = NodePath("../../ItemManager")
 
 [node name="DropItemToWorld" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -1276,6 +1277,7 @@ script = ExtResource("3_1cojt")
 item = ExtResource("4_yq1aw")
 
 [node name="Icon" type="TextureRect" parent="CanvasLayer/Inventory/MarginContainer/GridContainer/ItemSlot"]
+visible = false
 z_index = 6
 layout_mode = 1
 anchors_preset = -1
@@ -1285,7 +1287,6 @@ anchor_right = 0.9
 anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_pyn1s")
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/Inventory/MarginContainer/GridContainer/ItemSlot"]
@@ -1315,6 +1316,7 @@ script = ExtResource("3_1cojt")
 item = ExtResource("8_i4fjy")
 
 [node name="Icon" type="TextureRect" parent="CanvasLayer/Inventory/MarginContainer/GridContainer/ItemSlot2"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -1323,7 +1325,6 @@ anchor_right = 0.9
 anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("9_pt3ps")
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/Inventory/MarginContainer/GridContainer/ItemSlot2"]

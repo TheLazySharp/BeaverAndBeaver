@@ -1,9 +1,8 @@
 extends Control
 
+@onready var drop: TileMapLayer = $"../../Land_layers/Drop"
 var drop_tile_OK := false
 var is_drop_completed := false
-
-@onready var drop: TileMapLayer = $"../../Land_layers/Drop"
 
 signal drop_tile(drop_tile_OK : bool)
 

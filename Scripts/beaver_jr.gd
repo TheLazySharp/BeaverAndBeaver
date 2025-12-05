@@ -24,8 +24,8 @@ var offset_pos: Vector2
 var game_paused:=false
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var wood_vfx: GPUParticles2D = $Visuals/WoodVFX
 
-#var is_packed:= true
 var is_invincible:= false
 var is_going_to_farm := false
 var is_farming:= false
@@ -101,6 +101,8 @@ func _on_radar_area_exited(_area: Area2D) -> void:
 	is_going_to_farm = false
 	is_farming = false
 	farming_timer.stop()
+	wood_vfx.emitting = false
+	wood_vfx.hide()
 	print("farming ended")
 	if not is_coming_to_pack:
 		radar.set_deferred("disabled", true)
@@ -127,10 +129,11 @@ func farm() -> void:
 	if not game_paused:
 		if farmable_target != null and "take_damages" in farmable_target:
 			farming_timer.start()
+			wood_vfx.restart()
+			wood_vfx.show()
 			is_farming = true
 			if is_farming:
 				farmable_target.take_damages(farming_power)
-				#VFX farming
 
 func _on_farming_timer_timeout() -> void:
 	if farmable_target == null:
@@ -205,4 +208,4 @@ func display_damages(damages)-> void:
 
 func _on_collect_zone_entered(area: Area2D) -> void:
 	if area.is_in_group("collectables"):
-		player_xp_manager.get_xp(1)
+		XPManager.get_xp(1)

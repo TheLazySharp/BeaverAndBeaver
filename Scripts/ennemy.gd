@@ -18,7 +18,7 @@ var game_paused:=false
 @onready var path_timer: Timer = $path_Timer
 @onready var damages_text_pos = get_node("MarkerDamages")
 
-@onready var color_rect = get_node("ColorRect")
+#@onready var color_rect = get_node("ColorRect")
 @onready var damage_timer: Timer = $DamageTimer_Get
 @onready var base_color: Color
 
@@ -27,7 +27,7 @@ var game_paused:=false
 func _ready() -> void:
 	randomize()
 	navigation_agent.target_position = target.global_position
-	base_color = color_rect.color
+	#base_color = color_rect.color
 	current_life = max_life
 	gm_scene.game_paused.connect(_on_game_paused)
 
@@ -43,8 +43,8 @@ func _process(_delta: float) -> void:
 	if current_life <=0:
 		current_life = 0
 		var xp :=xp_scene.instantiate()
-		xp.spawn(global_position)
 		get_parent().add_child(xp)
+		xp.spawn(global_position)
 		
 		queue_free()
 
@@ -59,7 +59,7 @@ func get_damages(damages: int) -> void:
 		#print("enemy receives : ", damages)
 		damage_timer.start()
 		current_life -= damages
-		color_rect.color= Color("ffffff")
+		#color_rect.color= Color("ffffff")
 		display_damages(damages)
 	
 
@@ -67,7 +67,8 @@ func spawn(spawn_position: Vector2):
 	global_position = spawn_position
 
 func _on_damage_timer_timeout() -> void:
-	color_rect.color = base_color
+	#color_rect.color = base_color
+	pass
 
 func _on_game_paused(game_on_pause) -> void:
 	game_paused = game_on_pause

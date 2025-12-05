@@ -26,7 +26,7 @@ func instantiate_junior() -> void:
 				if marker_status == false:
 					var starting_position = find_child(str("Junior",i)).global_position
 					var junior := junior_scene.instantiate()
-					get_tree().current_scene.add_child(junior)
+					get_node("/root/World/Juniors").add_child(junior)
 					junior.spawn(starting_position)
 					juniors_spawn_points[i] = true
 					#print("junior created")
