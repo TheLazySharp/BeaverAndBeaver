@@ -1,30 +1,38 @@
 class_name  Bullet
 extends Area2D
 
-var speed : float = 400
-var max_range : = 400
-@export var damages : int = 10
+@export var arrow_data: WeaponData
+
+var speed
+var max_range
+var damages
 @onready var trail: CPUParticles2D = $VFX
 
 var velocity : Vector2
 var start_position : Vector2
 
 @onready var gm_scene: Node = $"/root/World/game_manager"
-var game_paused:=false
+var game_paused:= false
+
+var is_active:= false
 
 func _ready() -> void:
 	gm_scene.game_paused.connect(_on_game_paused)
+	speed = arrow_data.speed
+	max_range = arrow_data.atk_range
+	damages = arrow_data.dmg
 
-func fire(from_position: Vector2, direction: Vector2) -> void:
+func fire(from_position: Vector2, direction: Vector2, angle: float) -> void:
 	#print(from_position)
 	global_position = from_position
 	start_position = from_position
 	trail.global_position = global_position
 	velocity = direction.normalized() * speed
 	self.show()
+	is_active = true
 	set_physics_process(true)
-	trail.emitting = true
-	rotation = 0
+	trail.restart()
+	rotation = angle
 
 
 func _physics_process(delta: float) -> void:
@@ -39,18 +47,24 @@ func _physics_process(delta: float) -> void:
 	
 	if start_position.distance_to(global_position) > max_range:
 		if not game_paused:
+			trail.emit_signal("finished")
 			reset_bullet()
 
 
 func _on_area_hit(_area: Area2D) -> void:
-	reset_bullet()
+	pass
+	#trail.emit_signal("finished")
+	#hitbox.set_deferred("disabled", true)
+	#reset_bullet()
 
 
 func _on_body_hit(body: Node2D) -> void:
-	if "get_damages" in body and visible:
+	if "get_damages" in body and body.is_in_group("ennemies") and is_active:
 		body.get_damages(damages)
+		trail.emit_signal("finished")
 		reset_bullet()
 	else:
+		trail.emit_signal("finished")
 		reset_bullet()
 
 func _on_game_paused(game_on_pause) -> void:
@@ -59,4 +73,6 @@ func _on_game_paused(game_on_pause) -> void:
 
 func reset_bullet()-> void:
 	visible = false
+	is_active = false
 	set_physics_process(false)
+	global_position = Vector2(-10,-10)

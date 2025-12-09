@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var loot: ItemData
 
 @onready var gm_scene: Node = $"/root/World/game_manager"
+
 var game_paused:=false
 
 var max_life: int

@@ -1,6 +1,6 @@
 extends TextureRect
 
-#@export var item_manager: Node
+
 var items: Array
 
 var item: ItemData

@@ -45,8 +45,7 @@ func _process(_delta: float) -> void:
 		var xp :=xp_scene.instantiate()
 		get_parent().add_child(xp)
 		xp.spawn(global_position)
-		
-		queue_free()
+		queue_free() 
 
 
 func _on_timer_timeout() -> void:
@@ -56,7 +55,7 @@ func _on_timer_timeout() -> void:
 
 func get_damages(damages: int) -> void:
 	if not game_paused:
-		#print("enemy receives : ", damages)
+		print("enemy receives : ", damages)
 		damage_timer.start()
 		current_life -= damages
 		#color_rect.color= Color("ffffff")
@@ -105,4 +104,4 @@ func display_damages(damages)-> void:
 
 
 func _on_ennemy_death() -> void:
-	print("ennemy is dead")
+	pass

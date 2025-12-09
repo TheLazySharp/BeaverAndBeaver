@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh2o1j6s8uxlw"]
+[gd_scene load_steps=5 format=3 uid="uid://dh2o1j6s8uxlw"]
 
 [ext_resource type="Script" uid="uid://bmlo7vrx1t5q3" path="res://Scripts/axe.gd" id="1_6yvxt"]
 [ext_resource type="Texture2D" uid="uid://bt72hplsdjxw6" path="res://Assets/weapons/axe.png" id="2_8edwl"]
+[ext_resource type="Resource" uid="uid://m78cavmqijx3" path="res://Resources/Weapons/axe.tres" id="2_dkanj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dkanj"]
 radius = 14.0
@@ -10,6 +11,7 @@ radius = 14.0
 collision_layer = 1024
 collision_mask = 34
 script = ExtResource("1_6yvxt")
+axe_data = ExtResource("2_dkanj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)

@@ -9,10 +9,6 @@
 radius = 5.0
 height = 20.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvr15"]
-radius = 5.0
-height = 20.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ucqlk"]
 atlas = ExtResource("4_pi3ax")
 region = Rect2(0, 192, 64, 64)
@@ -49,6 +45,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvr15"]
+radius = 7.0
+height = 28.0
+
 [node name="Ennemy" type="CharacterBody2D" groups=["ennemies"]]
 z_index = 20
 z_as_relative = false
@@ -84,6 +84,17 @@ wait_time = 0.1
 
 [node name="Visuals" type="Node" parent="."]
 
+[node name="DamageTimer_OnPlayer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-1, -13)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_j5v2q")
+autoplay = "default"
+
 [node name="Hitbox" type="Area2D" parent="."]
 visible = false
 collision_layer = 2
@@ -91,25 +102,13 @@ collision_mask = 1101
 
 [node name="HitShape" type="CollisionShape2D" parent="Hitbox"]
 visible = false
-position = Vector2(0, -10)
+position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_gvr15")
 debug_color = Color(0.88270926, 0.06722261, 0.79457116, 0.41960785)
-
-[node name="DamageTimer_OnPlayer" type="Timer" parent="."]
-wait_time = 0.3
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(0, -11)
-scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_j5v2q")
-autoplay = "default"
-frame_progress = 0.32796893
 
 [connection signal="tree_exited" from="." to="." method="_on_ennemy_death"]
 [connection signal="timeout" from="path_Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="DamageTimer_Get" to="." method="_on_damage_timer_timeout"]
+[connection signal="timeout" from="DamageTimer_OnPlayer" to="." method="_on_damage_timer_on_player_timeout"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_exited"]
-[connection signal="timeout" from="DamageTimer_OnPlayer" to="." method="_on_damage_timer_on_player_timeout"]

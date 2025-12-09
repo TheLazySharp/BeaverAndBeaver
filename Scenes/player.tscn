@@ -1,13 +1,13 @@
 [gd_scene load_steps=35 format=3 uid="uid://bfqfkdast3fls"]
 
 [ext_resource type="Script" uid="uid://dwdl5qvpdnxvn" path="res://Scripts/player.gd" id="1_v0iea"]
-[ext_resource type="Texture2D" uid="uid://b6qr2q1f85sj2" path="res://Assets/BEAVER_01-sheet.png" id="2_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://b6qr2q1f85sj2" path="res://Assets/Characters/BEAVER_01-sheet.png" id="2_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://3g0m43hcvlsk" path="res://Scenes/WEAPONS/bow.tscn" id="2_cvnsp"]
 [ext_resource type="Shader" uid="uid://ypa4o84aameq" path="res://Shaders/player_damaged.gdshader" id="2_vgqql"]
 [ext_resource type="PackedScene" uid="uid://dh2o1j6s8uxlw" path="res://Scenes/WEAPONS/axe.tscn" id="3_gymyn"]
 [ext_resource type="AnimationLibrary" uid="uid://bnb2413glx753" path="res://Animations/beaver_animations.res" id="5_8erm5"]
 [ext_resource type="PackedScene" uid="uid://pej2qquyboig" path="res://Scenes/damages_text.tscn" id="5_fkybt"]
-[ext_resource type="Texture2D" uid="uid://dunmm61xfpgu8" path="res://Assets/GREEN_CROSS.png" id="6_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://dunmm61xfpgu8" path="res://Assets/UI/GREEN_CROSS.png" id="6_tx1dd"]
 [ext_resource type="Script" uid="uid://b5xr8p1whdk1b" path="res://Scripts/juniors.gd" id="6_x3wgy"]
 [ext_resource type="PackedScene" uid="uid://c85qduc5wj1ay" path="res://Scenes/beaver_jr.tscn" id="7_3smsa"]
 [ext_resource type="Script" uid="uid://fnmf6ggiekl1" path="res://Scripts/arc.gd" id="9_f1ek2"]
@@ -177,9 +177,9 @@ damages_text = ExtResource("5_fkybt")
 position = Vector2(0, -16)
 
 [node name="Axe" parent="Weapons" instance=ExtResource("3_gymyn")]
+position = Vector2(0, 16)
 
 [node name="Bow" parent="Weapons" instance=ExtResource("2_cvnsp")]
-visible = false
 
 [node name="Visuals" type="Node2D" parent="."]
 z_as_relative = false
@@ -207,7 +207,7 @@ process_material = SubResource("ParticleProcessMaterial_f1ek2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(0, -3)
+position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_f60y1")
 
 [node name="TakingDamages" type="Timer" parent="."]
@@ -224,7 +224,6 @@ shape = SubResource("CapsuleShape2D_vgqql")
 debug_color = Color(0.9344128, 0.1669651, 0.49408865, 0.41960785)
 
 [node name="MarkerDamages" type="Marker2D" parent="."]
-visible = false
 position = Vector2(0, -34)
 
 [node name="Juniors" type="Node2D" parent="."]

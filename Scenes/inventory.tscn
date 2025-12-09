@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dw15g7jhxhi42" path="res://Scripts/inventory.gd" id="1_0n8tc"]
 [ext_resource type="Script" uid="uid://ct3mne72gdm1m" path="res://Scripts/control_drop_data.gd" id="1_k1vlg"]
 [ext_resource type="Script" uid="uid://cqpjpm262dhpg" path="res://Scripts/item_slot.gd" id="1_k5gp2"]
-[ext_resource type="Texture2D" uid="uid://chbyq6op0mitq" path="res://Assets/WOOD.png" id="2_yxepq"]
-[ext_resource type="Resource" uid="uid://bdcx24kagdrwh" path="res://Resources/wood.tres" id="3_k1vlg"]
+[ext_resource type="Texture2D" uid="uid://chbyq6op0mitq" path="res://Assets/Props/WOOD.png" id="2_yxepq"]
+[ext_resource type="Resource" uid="uid://bdcx24kagdrwh" path="res://Resources/Items/wood.tres" id="3_k1vlg"]
 [ext_resource type="FontFile" uid="uid://cy0lbkvt1xb4p" path="res://Fonts/Cute Dino.otf" id="6_trvqw"]
 [ext_resource type="Script" uid="uid://1t8qggq4muf7" path="res://Scripts/item_quantity_label.gd" id="7_aqnmd"]
 

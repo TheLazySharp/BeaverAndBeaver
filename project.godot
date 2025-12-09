@@ -195,6 +195,12 @@ tests={
 2d_physics/layer_9="collectzones"
 2d_physics/layer_10="collectables"
 2d_physics/layer_11="weapons"
+2d_physics/layer_12="farmzone"
+2d_physics/layer_13="resource"
+
+[navigation]
+
+2d/merge_rasterizer_cell_scale=0.5
 
 [rendering]
 

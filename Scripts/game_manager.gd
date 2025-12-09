@@ -7,6 +7,7 @@ signal game_paused(game_on_pause: bool)
 @onready var player: CharacterBody2D = $"../BeaverSr"
 @onready var day_manager: Node = $"../DayManager"
 @onready var pause_manager: Control = $"../CanvasLayer/Pause"
+@onready var leveling: Control = $"../CanvasLayer/Leveling"
 
 var game_over_scene:= "uid://c6ue1qnj30p5b"
 
@@ -16,7 +17,7 @@ func _ready() -> void:
 	player.game_over.connect(_update_game_over)
 	day_manager.day_ended.connect(_update_pause_status)
 	pause_manager.quit_pause.connect(_update_ingame_pause)
-	
+	leveling.game_paused.connect(_leveling_pause)
 	
 func _process(_delta: float) -> void:
 	process_inputs()
@@ -50,3 +51,8 @@ func _update_pause_status(day_ended):
 func _update_ingame_pause(ingame_pause):
 	game_on_pause = ingame_pause
 	pause_status()
+
+func _leveling_pause(leveling_pause):
+	game_on_pause = leveling_pause
+	emit_signal("game_paused", game_on_pause)
+	

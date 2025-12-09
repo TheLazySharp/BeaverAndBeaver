@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjuws4ysoivbu"]
+[gd_scene load_steps=8 format=3 uid="uid://bjuws4ysoivbu"]
 
 [ext_resource type="Script" uid="uid://da80m3xjk2lov" path="res://Scripts/bullet.gd" id="1_xjght"]
-[ext_resource type="Texture2D" uid="uid://cb8bd11dwcpip" path="res://Assets/arrow.png" id="2_oduel"]
+[ext_resource type="Resource" uid="uid://b8nw2s85q3f0a" path="res://Resources/Weapons/arrow.tres" id="2_4v88u"]
+[ext_resource type="Texture2D" uid="uid://cb8bd11dwcpip" path="res://Assets/weapons/arrow.png" id="2_oduel"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oduel"]
 blend_mode = 1
@@ -29,6 +30,7 @@ z_as_relative = false
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_xjght")
+arrow_data = ExtResource("2_4v88u")
 
 [node name="VFX" type="CPUParticles2D" parent="."]
 visible = false
@@ -58,7 +60,7 @@ position = Vector2(0, -16)
 texture = ExtResource("2_oduel")
 offset = Vector2(0, 8)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="CollisionShape2D" parent="."]
 z_as_relative = false
 position = Vector2(0, -12)
 shape = SubResource("CircleShape2D_sbm0e")

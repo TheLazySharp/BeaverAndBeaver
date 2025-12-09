@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3 uid="uid://b8nw2s85q3f0a"]
+
+[ext_resource type="Script" uid="uid://b4w306m6nlsvc" path="res://Resources/Scripts/weapon_data.gd" id="1_a1ybk"]
+[ext_resource type="Texture2D" uid="uid://cb8bd11dwcpip" path="res://Assets/weapons/arrow.png" id="2_a1ybk"]
+
+[resource]
+script = ExtResource("1_a1ybk")
+weapon_name = "arrow"
+weapon_icon = ExtResource("2_a1ybk")
+dmg = 10
+dmg_on_resources = 0
+atk_range = 400.0
+radius = 0
+speed = 400.0
+speed_rotation = 0
+wood_cost = 20
+stone_cost = 5
+metadata/_custom_type_script = "uid://b4w306m6nlsvc"

@@ -3,9 +3,10 @@ extends CharacterBody2D
 var max_life : int
 var current_life : int
 
-var speed:= 90
-var boost:= 50
-var back_to_pack_speed:= 0
+var speed:= 100
+var acceleration := 250
+var boost:= 4
+var back_to_pack_speed:= 4
 
 var farmable_target: Node2D
 var farming_power:= 10
@@ -23,7 +24,6 @@ var offset_pos: Vector2
 @onready var gm_scene: Node = $"/root/World/game_manager"
 var game_paused:=false
 
-@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var wood_vfx: GPUParticles2D = $Visuals/WoodVFX
 
 var is_invincible:= false
@@ -31,7 +31,7 @@ var is_going_to_farm := false
 var is_farming:= false
 var is_taking_damages:= false
 var is_being_healed:= false
-
+var is_idle:= true
 @export var back_to_pack_threshold: float = 0.3
 var is_coming_to_pack:= false
 
@@ -39,6 +39,8 @@ var is_coming_to_pack:= false
 
 @export var damages_text: PackedScene
 @onready var damages_text_pos = get_node("MarkerDamages")
+
+var target_pos: Vector2
 
 func _ready() -> void:
 	max_life = 500
@@ -56,23 +58,28 @@ func _process(_delta: float) -> void:
 
 		
 func _physics_process(_delta: float) -> void:
-	if velocity.length()>0.1:
-		animated_sprite.play("walk")
-	else: animated_sprite.play("idle")
-	
-	
-	if not is_going_to_farm or is_coming_to_pack:
-		navigation_agent.target_position = beaver_sr.global_position + offset_pos
-		var junior_direction = to_local(navigation_agent.get_next_path_position()).normalized()
-		velocity = junior_direction * (speed + back_to_pack_speed)
+	if abs(global_position - target_pos).length() < 3:
+		is_idle = true
+	else: 
+		is_idle = false
 		
-	if not game_paused:
-		if is_going_to_farm:
-			#is_packed = false
-			var junior_direction = to_local(navigation_agent.get_next_path_position()).normalized()
-			velocity = junior_direction * speed
-	if not game_paused:	
-		move_and_slide()
+	if !is_idle and !is_farming:
+		animated_sprite.play("walk")
+	if is_idle or is_farming : 
+		animated_sprite.play("idle")
+	
+	if not is_going_to_farm:
+		target_pos = beaver_sr.global_position + offset_pos
+		if abs(global_position - target_pos).length() < 3:
+			radar.set_deferred("disabled", false)
+			
+
+
+	if !game_paused:
+		if !is_farming and !is_idle:
+			var direction = position.direction_to(target_pos)
+			velocity = velocity.move_toward(direction * speed, acceleration)
+			move_and_slide()
 
 func _on_game_paused(game_on_pause) -> void:
 	game_paused = game_on_pause
@@ -85,16 +92,16 @@ func spawn(spawn_position: Vector2):
 		print("max life = ", max_life, "/ Current life = ", current_life)
 
 
-func _on_radar_area_entered(ressource: Area2D) -> void:
-	if ressource.is_in_group("ressources"):
-		print("ressource detected")
-		if not game_paused and not is_going_to_farm:
+func _on_radar_area_entered(resource: Area2D) -> void:
+	if resource.get_collision_layer_value(13):
+		print("resource detected")
+		if !is_going_to_farm:
 			is_going_to_farm = true
 			is_invincible = true
-			#is_packed = false
-			navigation_agent.target_position = ressource.get_child(1).global_position #in the resource scene, FarmPoint is supposed to be second child
+			target_pos = resource.get_child(1).global_position
+
 		if farmable_target == null:
-			farmable_target = ressource.get_parent()
+			farmable_target = resource.get_parent()
 
 
 func _on_radar_area_exited(_area: Area2D) -> void:
@@ -108,26 +115,14 @@ func _on_radar_area_exited(_area: Area2D) -> void:
 		radar.set_deferred("disabled", true)
 		radar.set_deferred("disabled", false)
 
-func _on_target_reached() -> void:
-	is_invincible = false
-	if is_going_to_farm and not is_coming_to_pack:
-		navigation_agent.target_position = position
-		#print("ressource reached")
-		farm()
-	
-	else: 
-		#is_packed = true
-		navigation_agent.target_position = beaver_sr.position + offset_pos
 
-		if is_coming_to_pack:
-			radar.set_deferred("disabled", false)
-			is_coming_to_pack = false
-		#print("back to daddy :)")
 	
 
 func farm() -> void:
 	if not game_paused:
 		if farmable_target != null and "take_damages" in farmable_target:
+			#animated_sprite.play("idle")
+			print("farming")
 			farming_timer.start()
 			wood_vfx.restart()
 			wood_vfx.show()
@@ -137,12 +132,12 @@ func farm() -> void:
 
 func _on_farming_timer_timeout() -> void:
 	if farmable_target == null:
+		is_farming = false
 		return
 	elif "take_damages" in farmable_target:
 		farmable_target.take_damages(farming_power)
 
 func back_to_pack() -> void:
-	 #trouver le moyen de le repack correctement pour ne pas déclencher farm
 	radar.set_deferred("disabled", true)
 	is_coming_to_pack = true
 	is_farming = false
@@ -150,7 +145,6 @@ func back_to_pack() -> void:
 	is_invincible = true
 	back_to_pack_speed = boost
 	#print("back to pack !!!")
-	pass
 
 func process_healing(healing: int) -> void:
 	if not game_paused:
@@ -209,3 +203,7 @@ func display_damages(damages)-> void:
 func _on_collect_zone_entered(area: Area2D) -> void:
 	if area.is_in_group("collectables"):
 		XPManager.get_xp(1)
+		
+	if area.get_collision_layer_value(12) and is_going_to_farm:
+		print("junior in farming area")
+		farm()

@@ -1,11 +1,28 @@
 extends Node
 
+const AXE = preload("uid://m78cavmqijx3")
+const BOW = preload("uid://bsa4806plmw2s")
+const ARROW = preload("uid://b8nw2s85q3f0a")
 
-# Called when the node enters the scene tree for the first time.
+
+
+@export var weapons : Array[WeaponData]
+
+
+
 func _ready() -> void:
-	pass # Replace with function body.
+	weapons.append(AXE)
+	weapons.append(BOW)
+	weapons.append(ARROW)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+
+
+func equip_weapon() -> void:
+	pass
+
+func unequip_weapon() -> void:
+	pass
+
+func level_up() -> void:
 	pass

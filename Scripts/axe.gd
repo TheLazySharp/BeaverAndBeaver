@@ -1,18 +1,25 @@
 extends Area2D
 
-var speed_rotation:= 15
-var speed:= 5
+@export var axe_data : WeaponData
+
+var speed_rotation
+var speed
 var d := 0.0
-var radius := 100
+var radius
 var offset_position: Vector2
-var dmg := 20
-var dmg_on_ressources := 1
+var dmg
+var dmg_on_resources
 
 @onready var gm_scene: Node = $"/root/World/game_manager"
-var game_paused:=false
+var game_paused:= false
 
 func _ready() -> void:
 	gm_scene.game_paused.connect(_on_game_paused)
+	speed_rotation = axe_data.speed_rotation
+	speed = axe_data.speed
+	radius = axe_data.radius
+	dmg = axe_data.dmg
+	dmg_on_resources = axe_data.dmg_on_resources
 
 
 func _physics_process(delta: float) -> void:
@@ -35,5 +42,5 @@ func _on_game_paused(game_on_pause) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("ressources") and "take_damages" in area.get_parent():
 		print("ressources hit")
-		area.get_parent().take_damages(dmg_on_ressources)
+		area.get_parent().take_damages(dmg_on_resources)
 	else : return

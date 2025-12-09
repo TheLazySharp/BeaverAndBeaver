@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3 uid="uid://m78cavmqijx3"]
+
+[ext_resource type="Script" uid="uid://b4w306m6nlsvc" path="res://Resources/Scripts/weapon_data.gd" id="1_4n384"]
+[ext_resource type="Texture2D" uid="uid://bt72hplsdjxw6" path="res://Assets/weapons/axe.png" id="2_omxwl"]
+
+[resource]
+script = ExtResource("1_4n384")
+weapon_name = "axe"
+weapon_icon = ExtResource("2_omxwl")
+dmg = 10
+speed = 5.0
+wood_cost = 20
+stone_cost = 20
+metadata/_custom_type_script = "uid://b4w306m6nlsvc"

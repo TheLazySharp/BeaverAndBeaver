@@ -42,10 +42,10 @@ func get_xp(xp) -> void:
 	emit_signal("update_xp", current_xp)
 	
 	#xp_bar.value = current_xp
-	print("Player xp gets + ",xp," / total xp = ",current_xp)
+	#print("Player xp gets + ",xp," / total xp = ",current_xp)
 
 func level_up() -> void:
-	print("level up")
+	#print("level up")
 	current_level += 1
 	current_level_target_xp = xp_levels[current_level]
 	current_xp -= xp_levels[current_level-1]
