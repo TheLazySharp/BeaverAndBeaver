@@ -6,5 +6,5 @@
 script = ExtResource("1_0ls8h")
 farmable_name = "tree_XL"
 life = 100
-loot_quantity = 12
+loot_quantity = 50
 metadata/_custom_type_script = "uid://dnovvdh2yganp"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://xidujoxly1yi"]
 
-[ext_resource type="Script" uid="uid://c7jrfcuojl0h8" path="res://Scripts/ressource.gd" id="1_mgnhk"]
+[ext_resource type="Script" uid="uid://c7jrfcuojl0h8" path="res://Scripts/ITEMS/ressource.gd" id="1_mgnhk"]
 [ext_resource type="Resource" uid="uid://c5velvgklts06" path="res://Resources/Trees/tree_M.tres" id="2_xkkyy"]
 [ext_resource type="Resource" uid="uid://bdcx24kagdrwh" path="res://Resources/Items/wood.tres" id="3_m03er"]
 [ext_resource type="Texture2D" uid="uid://dpelkw30c3y4y" path="res://Assets/Props/tree_medium.png" id="4_1bi01"]

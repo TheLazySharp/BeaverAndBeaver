@@ -6,5 +6,5 @@
 script = ExtResource("1_sggok")
 farmable_name = "rock_M"
 life = 40
-loot_quantity = 4
+loot_quantity = 20
 metadata/_custom_type_script = "uid://dnovvdh2yganp"

@@ -7,4 +7,4 @@ class_name ItemData
 @export var tileset_ID : int
 @export var tile_atlas_pos : Vector2i
 @export var item_scene : PackedScene
-var quantity : int = 10
+@export var quantity : int

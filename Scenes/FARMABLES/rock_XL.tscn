@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://rucltfsmmjxe"]
 
-[ext_resource type="Script" uid="uid://c7jrfcuojl0h8" path="res://Scripts/ressource.gd" id="1_uy3gr"]
+[ext_resource type="Script" uid="uid://c7jrfcuojl0h8" path="res://Scripts/ITEMS/ressource.gd" id="1_uy3gr"]
 [ext_resource type="Resource" uid="uid://b24sldf3o13iw" path="res://Resources/Rocks/rock_XL.tres" id="2_uy3gr"]
 [ext_resource type="Resource" uid="uid://budr5sdv8v70c" path="res://Resources/Items/stone.tres" id="3_t6bat"]
 [ext_resource type="Texture2D" uid="uid://cplb8mwe7hsq3" path="res://Assets/Props/rock_XL.png" id="4_3tfji"]

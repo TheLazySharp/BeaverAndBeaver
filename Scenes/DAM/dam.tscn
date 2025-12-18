@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cs311xlcqlrt0"]
 
-[ext_resource type="Script" uid="uid://ll5vynm3wl3q" path="res://Scripts/dam.gd" id="1_t5ih7"]
+[ext_resource type="Script" uid="uid://ll5vynm3wl3q" path="res://Scripts/SCENES/dam.gd" id="1_t5ih7"]
 [ext_resource type="FontFile" uid="uid://cy0lbkvt1xb4p" path="res://Fonts/Cute Dino.otf" id="2_rxln7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cx0hi"]

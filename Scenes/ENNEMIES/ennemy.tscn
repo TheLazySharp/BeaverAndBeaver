@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://c31g0smlywes2"]
 
-[ext_resource type="Script" uid="uid://b2k0wdgpd2gde" path="res://Scripts/ennemy.gd" id="1_uq27j"]
-[ext_resource type="PackedScene" uid="uid://pej2qquyboig" path="res://Scenes/damages_text.tscn" id="2_gvr15"]
-[ext_resource type="PackedScene" uid="uid://5uh2knats63k" path="res://Scenes/xp_sphere.tscn" id="3_1b0bn"]
+[ext_resource type="Script" uid="uid://b2k0wdgpd2gde" path="res://Scripts/CHARACTERS/ennemy.gd" id="1_uq27j"]
+[ext_resource type="PackedScene" uid="uid://pej2qquyboig" path="res://Scenes/UI/damages_text.tscn" id="2_gvr15"]
+[ext_resource type="PackedScene" uid="uid://5uh2knats63k" path="res://Scenes/ITEMS/xp_sphere.tscn" id="3_1b0bn"]
 [ext_resource type="Texture2D" uid="uid://7ox7o2wgyn6h" path="res://Assets/Mobs/Wolf_Walk.png" id="4_pi3ax"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1b0bn"]
@@ -54,12 +54,12 @@ z_index = 20
 z_as_relative = false
 y_sort_enabled = true
 collision_layer = 2
-collision_mask = 12
+collision_mask = 8204
 script = ExtResource("1_uq27j")
 damages_text = ExtResource("2_gvr15")
 xp_scene = ExtResource("3_1b0bn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["ennemies"]]
 visible = false
 position = Vector2(0, -6)
 shape = SubResource("CapsuleShape2D_1b0bn")
@@ -68,11 +68,11 @@ shape = SubResource("CapsuleShape2D_1b0bn")
 path_desired_distance = 5.0
 target_desired_distance = 5.0
 path_postprocessing = 1
-simplify_epsilon = 0.8
-avoidance_enabled = true
+path_metadata_flags = 0
+simplify_path = true
+simplify_epsilon = 10.0
 
 [node name="path_Timer" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
 autostart = true
 
@@ -95,12 +95,12 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_j5v2q")
 autoplay = "default"
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." groups=["ennemies"]]
 visible = false
 collision_layer = 2
 collision_mask = 1101
 
-[node name="HitShape" type="CollisionShape2D" parent="Hitbox"]
+[node name="HitShape" type="CollisionShape2D" parent="Hitbox" groups=["ennemies"]]
 visible = false
 position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_gvr15")

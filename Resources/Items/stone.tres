@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctc62ptewno8k" path="res://Resources/Scripts/item_data.gd" id="1_4vwjj"]
 [ext_resource type="Texture2D" uid="uid://d2kvcvkievhvo" path="res://Assets/Props/STONE.png" id="1_m43qj"]
-[ext_resource type="PackedScene" uid="uid://cboxieb7gmlys" path="res://Scenes/wood.tscn" id="2_v5pv7"]
+[ext_resource type="PackedScene" uid="uid://deiw0l1t78l02" path="res://Scenes/ITEMS/stone.tscn" id="2_lwbyh"]
 
 [resource]
 script = ExtResource("1_4vwjj")
@@ -10,4 +10,5 @@ item_name = "stone"
 icon = ExtResource("1_m43qj")
 tileset_ID = 8
 tile_atlas_pos = Vector2i(1, 8)
-item_scene = ExtResource("2_v5pv7")
+item_scene = ExtResource("2_lwbyh")
+quantity = 10

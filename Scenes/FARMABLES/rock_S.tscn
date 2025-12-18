@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ddmur5pgkwh63"]
 
-[ext_resource type="Script" uid="uid://c7jrfcuojl0h8" path="res://Scripts/ressource.gd" id="1_ba250"]
+[ext_resource type="Script" uid="uid://c7jrfcuojl0h8" path="res://Scripts/ITEMS/ressource.gd" id="1_ba250"]
 [ext_resource type="Resource" uid="uid://b1hqbwovjlm65" path="res://Resources/Rocks/rock_S.tres" id="2_ba250"]
 [ext_resource type="Resource" uid="uid://budr5sdv8v70c" path="res://Resources/Items/stone.tres" id="3_8jm1n"]
 [ext_resource type="Texture2D" uid="uid://bbrx5j8n7tcxc" path="res://Assets/Props/rock_S.png" id="4_cryjd"]
@@ -30,7 +30,6 @@ loot = ExtResource("3_8jm1n")
 z_as_relative = false
 y_sort_enabled = true
 texture = ExtResource("4_cryjd")
-offset = Vector2(0, -20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

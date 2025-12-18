@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://0mf2apahyfoy"]
 
-[ext_resource type="Script" uid="uid://c7jrfcuojl0h8" path="res://Scripts/ressource.gd" id="1_7ag71"]
+[ext_resource type="Script" uid="uid://c7jrfcuojl0h8" path="res://Scripts/ITEMS/ressource.gd" id="1_7ag71"]
 [ext_resource type="Resource" uid="uid://c5velvgklts06" path="res://Resources/Trees/tree_M.tres" id="2_0it7w"]
 [ext_resource type="Resource" uid="uid://bdcx24kagdrwh" path="res://Resources/Items/wood.tres" id="3_a5mp2"]
 [ext_resource type="Texture2D" uid="uid://b2aawci2qhjak" path="res://Assets/Props/falling_tree_high.png" id="4_7ag71"]

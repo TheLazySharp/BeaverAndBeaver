@@ -12,3 +12,7 @@ var scenes: Dictionary[String,String] = {
 
 func load_level(uid: String) -> void:
 	get_tree().call_deferred("change_scene_to_file", uid)
+
+func unload_game() -> void:
+	XPManager.unload()
+	WeaponsManager.unload()

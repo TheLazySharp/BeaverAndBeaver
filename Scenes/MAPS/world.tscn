@@ -1,27 +1,29 @@
-[gd_scene load_steps=178 format=4 uid="uid://c6msxridefxxd"]
+[gd_scene load_steps=193 format=4 uid="uid://c6msxridefxxd"]
 
-[ext_resource type="Script" uid="uid://bjxhai0r23s1h" path="res://Scripts/day_manager.gd" id="1_1cojt"]
-[ext_resource type="PackedScene" uid="uid://qfgy5vub100s" path="res://Scenes/game_manager.tscn" id="1_5ukr8"]
-[ext_resource type="PackedScene" uid="uid://bex3dw3trmah0" path="res://Scenes/scroller.tscn" id="1_8j60k"]
-[ext_resource type="PackedScene" uid="uid://bfqfkdast3fls" path="res://Scenes/player.tscn" id="1_a02cp"]
-[ext_resource type="PackedScene" uid="uid://qeeykcnwceiw" path="res://Scenes/selection_wheel.tscn" id="2_1cojt"]
-[ext_resource type="Script" uid="uid://dw15g7jhxhi42" path="res://Scripts/inventory.gd" id="2_axeuq"]
-[ext_resource type="Script" uid="uid://cqpjpm262dhpg" path="res://Scripts/item_slot.gd" id="3_1cojt"]
-[ext_resource type="PackedScene" uid="uid://v787in61o7y6" path="res://Scenes/ennemy_spawner.tscn" id="3_5ukr8"]
-[ext_resource type="Script" uid="uid://bdiix0s1bmolp" path="res://Scripts/xp_bar.gd" id="3_yq1aw"]
-[ext_resource type="Script" uid="uid://cw8n0bknao44l" path="res://Scripts/xp_label.gd" id="4_pyn1s"]
+[ext_resource type="Script" uid="uid://bjxhai0r23s1h" path="res://Scripts/MANAGERS/day_manager.gd" id="1_1cojt"]
+[ext_resource type="PackedScene" uid="uid://qfgy5vub100s" path="res://Scenes/MANAGERS/game_manager.tscn" id="1_5ukr8"]
+[ext_resource type="PackedScene" uid="uid://bex3dw3trmah0" path="res://Scenes/zABORDED/scroller.tscn" id="1_8j60k"]
+[ext_resource type="PackedScene" uid="uid://bfqfkdast3fls" path="res://Scenes/CHARACTERS/player.tscn" id="1_a02cp"]
+[ext_resource type="Script" uid="uid://dsjsr8uao4uhg" path="res://Scripts/MANAGERS/audio_manager.gd" id="1_ux4l1"]
+[ext_resource type="PackedScene" uid="uid://qeeykcnwceiw" path="res://Scenes/UI/selection_wheel.tscn" id="2_1cojt"]
+[ext_resource type="Script" uid="uid://dw15g7jhxhi42" path="res://Scripts/INVENTORY/inventory.gd" id="2_axeuq"]
+[ext_resource type="AudioStream" uid="uid://cuccmoqncxuj3" path="res://Audio/Song/palabras-perdidas-en-8-bits-263566.mp3" id="2_jgm5j"]
+[ext_resource type="Script" uid="uid://cqpjpm262dhpg" path="res://Scripts/INVENTORY/item_slot.gd" id="3_1cojt"]
+[ext_resource type="PackedScene" uid="uid://v787in61o7y6" path="res://Scenes/MANAGERS/ennemy_spawner.tscn" id="3_5ukr8"]
+[ext_resource type="Script" uid="uid://bdiix0s1bmolp" path="res://Scripts/UI/xp_bar.gd" id="3_yq1aw"]
+[ext_resource type="Script" uid="uid://cw8n0bknao44l" path="res://Scripts/UI/xp_label.gd" id="4_pyn1s"]
 [ext_resource type="Texture2D" uid="uid://bity4lsek7qs6" path="res://Assets/Water/waterfall/1x4_waterfall.png" id="5_55cdx"]
-[ext_resource type="Script" uid="uid://dwfne52n2qvgo" path="res://Scripts/xp_animation_player.gd" id="5_no8kt"]
+[ext_resource type="Script" uid="uid://dwfne52n2qvgo" path="res://Scripts/UI/xp_animation_player.gd" id="5_no8kt"]
 [ext_resource type="FontFile" uid="uid://cy0lbkvt1xb4p" path="res://Fonts/Cute Dino.otf" id="6_no8kt"]
 [ext_resource type="Texture2D" uid="uid://dgaliigbgooix" path="res://Assets/Tilsets/tileset.png" id="6_oo4o7"]
 [ext_resource type="Texture2D" uid="uid://srt5qm06m363" path="res://Assets/Water/waterfall/1x6_waterfall.png" id="6_yb0r4"]
 [ext_resource type="Texture2D" uid="uid://bv4tqwwv7pm5x" path="res://Assets/Tilsets/terrain_tiles_v2.png" id="7_k7acu"]
 [ext_resource type="Texture2D" uid="uid://c65p5iv8rayom" path="res://Assets/Tilsets/water_ground.png" id="7_wpjs7"]
-[ext_resource type="Script" uid="uid://1t8qggq4muf7" path="res://Scripts/item_quantity_label.gd" id="7_xbk3s"]
+[ext_resource type="Script" uid="uid://1t8qggq4muf7" path="res://Scripts/INVENTORY/item_quantity_label.gd" id="7_xbk3s"]
 [ext_resource type="Texture2D" uid="uid://bggcx33xva3nl" path="res://Assets/Tilsets/Modif_TS_by_LS-sheet.png" id="8_0fj1v"]
-[ext_resource type="Script" uid="uid://bbmi55q0v0pkw" path="res://Scripts/inventory_icon.gd" id="8_1cojt"]
+[ext_resource type="Script" uid="uid://bbmi55q0v0pkw" path="res://Scripts/INVENTORY/inventory_icon.gd" id="8_1cojt"]
 [ext_resource type="Texture2D" uid="uid://dh34onmgrvrfc" path="res://Assets/Props/props_sheet.png" id="8_asrs4"]
-[ext_resource type="Script" uid="uid://chevpqwyhneed" path="res://Scripts/main_layer.gd" id="8_ikia7"]
+[ext_resource type="Script" uid="uid://chevpqwyhneed" path="res://Scripts/LAYERSMAP/main_layer.gd" id="8_ikia7"]
 [ext_resource type="Texture2D" uid="uid://tlhptwaxxjid" path="res://Assets/Tilsets/g_terrain1.png" id="8_xsxod"]
 [ext_resource type="PackedScene" uid="uid://xidujoxly1yi" path="res://Scenes/FARMABLES/tree_light.tscn" id="9_0fj1v"]
 [ext_resource type="Texture2D" uid="uid://dryv8jkv3b2ud" path="res://Assets/Tilsets/g_terrain2.png" id="9_8dcyp"]
@@ -29,19 +31,26 @@
 [ext_resource type="Texture2D" uid="uid://cm864gogrroh8" path="res://Shaders/daynightcycle-gradient-texture.tres" id="10_pyn1s"]
 [ext_resource type="Texture2D" uid="uid://dtiie0oxjbqls" path="res://Assets/Tilsets/g_terrain3.png" id="10_qpwke"]
 [ext_resource type="Texture2D" uid="uid://dhonanwaj4tba" path="res://Assets/Tilsets/g_terrain4.png" id="11_720cp"]
-[ext_resource type="Script" uid="uid://b4w00f63jogjg" path="res://Scripts/tilemap_drop.gd" id="11_ikia7"]
+[ext_resource type="Script" uid="uid://b4w00f63jogjg" path="res://Scripts/LAYERSMAP/tilemap_drop.gd" id="11_ikia7"]
 [ext_resource type="Texture2D" uid="uid://cayfd7n3qk5bu" path="res://Assets/Tilsets/hills2.png" id="14_pm04p"]
 [ext_resource type="Texture2D" uid="uid://bf7xn8iv3wybr" path="res://Assets/Props/veg_decoratives.png" id="15_qpwke"]
 [ext_resource type="PackedScene" uid="uid://dcihybuxptaxy" path="res://Scenes/FARMABLES/tree_high.tscn" id="16_8dcyp"]
 [ext_resource type="PackedScene" uid="uid://be0rqf6ir37lw" path="res://Scenes/FARMABLES/tree_big.tscn" id="18_pm04p"]
-[ext_resource type="Script" uid="uid://dgjjb27shy4tk" path="res://Scripts/pause.gd" id="18_yq1aw"]
+[ext_resource type="Script" uid="uid://dgjjb27shy4tk" path="res://Scripts/SCENES/pause.gd" id="18_yq1aw"]
 [ext_resource type="PackedScene" uid="uid://0mf2apahyfoy" path="res://Scenes/FARMABLES/tree_falling.tscn" id="19_d4fel"]
-[ext_resource type="Script" uid="uid://p1kmh86var1g" path="res://Scenes/MENU/stats_screen.gd" id="19_no8kt"]
+[ext_resource type="Script" uid="uid://p1kmh86var1g" path="res://Scripts/UI/stats_screen.gd" id="19_no8kt"]
 [ext_resource type="PackedScene" uid="uid://byrdsuac6bdh5" path="res://Scenes/FARMABLES/tree_medium.tscn" id="20_d4fel"]
 [ext_resource type="PackedScene" uid="uid://cxtfhhwh7eh6m" path="res://Scenes/FARMABLES/rock_M.tscn" id="20_ibt6b"]
 [ext_resource type="PackedScene" uid="uid://ddmur5pgkwh63" path="res://Scenes/FARMABLES/rock_S.tscn" id="22_nycyy"]
 [ext_resource type="PackedScene" uid="uid://rucltfsmmjxe" path="res://Scenes/FARMABLES/rock_XL.tscn" id="23_07qvx"]
+[ext_resource type="Script" uid="uid://bxpjp0lssuhx4" path="res://Scripts/UI/gear_icon.gd" id="36_kimld"]
+[ext_resource type="Script" uid="uid://b45m4m8v3ioko" path="res://Scripts/UI/gear_label_Lvl.gd" id="38_kimld"]
 [ext_resource type="Script" uid="uid://dlitht070wmyn" path="res://Scripts/UI/leveling.gd" id="39_yb0r4"]
+[ext_resource type="Script" uid="uid://0p0bcp7yhybh" path="res://Scripts/LEVELUP/levelup_label_upgrade.gd" id="40_0nur5"]
+[ext_resource type="Script" uid="uid://dcbcfendqddxe" path="res://Scripts/LEVELUP/levelup_label.gd" id="40_gq5tr"]
+[ext_resource type="Script" uid="uid://bnfkyuguhwr7h" path="res://Scripts/LEVELUP/levelup_icon.gd" id="40_wpjs7"]
+[ext_resource type="Script" uid="uid://p1oaleyi5pio" path="res://Scripts/LEVELUP/levelup_label_Lvl.gd" id="41_sl775"]
+[ext_resource type="Script" uid="uid://ck821kjqn1evq" path="res://Scripts/LEVELUP/levelup_item_cost.gd" id="43_5brd2"]
 
 [sub_resource type="Environment" id="Environment_0pcbe"]
 background_mode = 3
@@ -2208,6 +2217,90 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pyn1s"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5brd2"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yb0r4"]
+bg_color = Color(0.93237364, 0.43690613, 0, 1)
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.9764706, 0.42745098, 0.078431375, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Animation" id="Animation_ux4l1"]
+resource_name = "IfNew"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button0/Levels:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [24, 32, 24]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Button0/Levels:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.5),
+"transitions": PackedFloat32Array(6.1035116e-05, 1398.8251, 0.013602332),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.98039216, 0.99607843, 0.13333334, 1), Color(0.9998184, 0.9999637, 0.9919732, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jgm5j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Button0/Levels:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [24]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Button0/Levels:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kimld"]
+_data = {
+&"IfNew": SubResource("Animation_ux4l1"),
+&"RESET": SubResource("Animation_jgm5j")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sl775"]
+
 [node name="World" type="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
@@ -2218,6 +2311,15 @@ environment = SubResource("Environment_0pcbe")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 blend_mode = 2
+
+[node name="AudioManager" type="Node" parent="."]
+script = ExtResource("1_ux4l1")
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("2_jgm5j")
+volume_db = -15.0
+autoplay = true
+bus = &"background"
 
 [node name="DayManager" type="Node" parent="."]
 script = ExtResource("1_1cojt")
@@ -2278,7 +2380,7 @@ tile_set = SubResource("TileSet_e0ngr")
 z_index = 20
 z_as_relative = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAA6APUAAQAAAAAAAwBGAOgAAQAAAAAAAwBBAOoAAQAAAAAAAwBDAO8AAQAAAAAAAwCQAPAAAQAAAAAABACVAO8AAQAAAAAABACTAPIAAQAAAAAABACfAOoAAQAAAAAAAgCaAPEAAQAAAAAAAgBPAO8AAQAAAAAAAQBQAPYAAQAAAAAAAQBQAPcAAQAAAAAAAQBUAPAAAQAAAAAAAQBUANkAAQAAAAAABgBcANkAAQAAAAAABgBUAOEAAQAAAAAABgDCAOYAAQAAAAAABwDGAOkAAQAAAAAABwDDAOcAAQAAAAAABwAfAeYAAQAAAAAACAAiAecAAQAAAAAACAAlAesAAQAAAAAACAAkAe8AAQAAAAAACAAeAfIAAQAAAAAACAAZAeIAAQAAAAAACAAUAdsAAQAAAAAACAAHAewAAQAAAAAABQACAfQAAQAAAAAABQD/AOsAAQAAAAAABQD3APAAAQAAAAAABQD4AOQAAQAAAAAABQD9AOEAAQAAAAAABQAEAd8AAQAAAAAABQDLAOIAAQAAAAAABQDGANwAAQAAAAAAAwAfAdgAAQAAAAAAAwA=")
+tile_map_data = PackedByteArray("AAD9ABgBAQAAAAAABwAEAQoBAQAAAAAABwAIAXMAAQAAAAAABwARARQBAQAAAAAABwAXAZEAAQAAAAAABwAXAc8AAQAAAAAABwAfARcBAQAAAAAABwAhAb4AAQAAAAAABwAjAdcAAQAAAAAABwAPABYAAQAAAAAABwAQADoAAQAAAAAABwAWABAAAQAAAAAABwAjAEwAAQAAAAAABwAmABUAAQAAAAAABwAuAA4AAQAAAAAABwBBAEsAAQAAAAAABwBCADcAAQAAAAAABwBQAD8AAQAAAAAABwBcAIQAAQAAAAAABwBgACAAAQAAAAAABwBjAB4AAQAAAAAABwBvAHsAAQAAAAAABwBxADkAAQAAAAAABwCBAAcAAQAAAAAABwCEAIQAAQAAAAAABwCFABQAAQAAAAAABwCIAA4AAQAAAAAABwCVABIAAQAAAAAABwCYADMAAQAAAAAABwCkAIMAAQAAAAAABwClAFMAAQAAAAAABwCoAHMAAQAAAAAABwCqAC0AAQAAAAAABwCsAAkAAQAAAAAABwAWALQAAQAAAAAABwAWAOcAAQAAAAAABwAfAKAAAQAAAAAABwAgAK8AAQAAAAAABwAiAKkAAQAAAAAABwAoAOMAAQAAAAAABwAuANQAAQAAAAAABwAxAOIAAQAAAAAABwBAANoAAQAAAAAABwBGALUAAQAAAAAABwBGAMYAAQAAAAAABwBOAOoAAQAAAAAABwBRAJ0AAQAAAAAABwBgAM8AAQAAAAAABwB/AKsAAQAAAAAABwCNANIAAQAAAAAABwCWANEAAQAAAAAABwCcAOUAAQAAAAAABwCwANcAAQAAAAAABwC5AMUAAQAAAAAABwDFAJcAAQAAAAAABwA7AAYBAQAAAAAABwA8ALoAAQAAAAAABwBBABABAQAAAAAABwBHABQBAQAAAAAABwBLAPQAAQAAAAAABwBLAPUAAQAAAAAABwBRAAUBAQAAAAAABwBSAM0AAQAAAAAABwBWAMkAAQAAAAAABwBYALIAAQAAAAAABwBqAN0AAQAAAAAABwBuAAIBAQAAAAAABwB0ALAAAQAAAAAABwB6ANcAAQAAAAAABwB8AOIAAQAAAAAABwCaALsAAQAAAAAABwCsAMoAAQAAAAAABwCsAAsBAQAAAAAABwCvABABAQAAAAAABwCwAAwBAQAAAAAABwC0AMQAAQAAAAAABwDCAPYAAQAAAAAABwDKALEAAQAAAAAABwDNAAIBAQAAAAAABwDVAMsAAQAAAAAABwDbALcAAQAAAAAABwDeAPkAAQAAAAAABwDlANsAAQAAAAAABwD2ALAAAQAAAAAABwD3ANEAAQAAAAAABwD6AOIAAQAAAAAABwAEAe0AAQAAAAAABwD0APUAAQAAAAAABgD3APoAAQAAAAAABgAVAeoAAQAAAAAABgD2AAcBAQAAAAAABgBwAMwAAQAAAAAABAB0ANwAAQAAAAAABACCAJIAAQAAAAAABACDAKkAAQAAAAAABACLAOsAAQAAAAAABACQAPIAAQAAAAAABACTAAgBAQAAAAAABACiALEAAQAAAAAABACjABUBAQAAAAAABAC0AMUAAQAAAAAABAC3AKAAAQAAAAAABAC/AIwAAQAAAAAABADAAAsBAQAAAAAABADIAPwAAQAAAAAABADiAKsAAQAAAAAABADkABsBAQAAAAAABADrAJMAAQAAAAAABAD1AP4AAQAAAAAABAD3ANAAAQAAAAAABAD8ANMAAQAAAAAABAD/AKIAAQAAAAAABAD/AAEBAQAAAAAABAD/ABwBAQAAAAAABAARARwBAQAAAAAABAASAd0AAQAAAAAABAAVAQIBAQAAAAAABAAZAd8AAQAAAAAABADEAEEAAQAAAAAABADUACcAAQAAAAAABADbAEUAAQAAAAAABADpACoAAQAAAAAABAD+AEUAAQAAAAAABAAEAT4AAQAAAAAABADGAHcAAQAAAAAABADeAJgAAQAAAAAABADrAKYAAQAAAAAABADtAJEAAQAAAAAABAD+AFUAAQAAAAAABAD/AH8AAQAAAAAABAAFAXMAAQAAAAAABAAeAJ4AAQAAAAAABAAhALgAAQAAAAAABAAjAKoAAQAAAAAABAAkALcAAQAAAAAABAAtAJ4AAQAAAAAABAAwAK8AAQAAAAAABAAyAMsAAQAAAAAABAAyAPkAAQAAAAAABAA5APUAAQAAAAAABABCAHoAAQAAAAAABABIAO8AAQAAAAAABABTANAAAQAAAAAABABXAPYAAQAAAAAABABgANsAAQAAAAAABABjAIoAAQAAAAAABABxAGoAAQAAAAAABAB1AJgAAQAAAAAABAB2AIIAAQAAAAAABAB5ALEAAQAAAAAA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")
 tile_set = SubResource("TileSet_7yui6")
 
 [node name="Drop" type="TileMapLayer" parent="Land_layers"]
@@ -2699,6 +2801,183 @@ offset_right = 33.0
 offset_bottom = 32.999996
 color = Color(1, 0, 0, 0.3372549)
 
+[node name="Gear" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 158.0
+offset_top = 66.0
+offset_right = 461.0
+offset_bottom = 106.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Gear"]
+custom_minimum_size = Vector2(42, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Gear/MarginContainer"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 4
+
+[node name="Gear0" type="Panel" parent="CanvasLayer/Gear/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Gear/MarginContainer/HBoxContainer/Gear0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("36_kimld")
+
+[node name="Lvl" type="Label" parent="CanvasLayer/Gear/MarginContainer/HBoxContainer/Gear0"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -5.999996
+offset_right = 5.0
+offset_bottom = 5.0416718
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 10
+script = ExtResource("38_kimld")
+
+[node name="Gear1" type="Panel" parent="CanvasLayer/Gear/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Gear/MarginContainer/HBoxContainer/Gear1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("36_kimld")
+
+[node name="Lvl" type="Label" parent="CanvasLayer/Gear/MarginContainer/HBoxContainer/Gear1"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -5.999996
+offset_right = 5.0
+offset_bottom = 5.0416718
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 10
+script = ExtResource("38_kimld")
+
+[node name="Gear2" type="Panel" parent="CanvasLayer/Gear/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Gear/MarginContainer/HBoxContainer/Gear2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("36_kimld")
+
+[node name="Lvl" type="Label" parent="CanvasLayer/Gear/MarginContainer/HBoxContainer/Gear2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -5.999996
+offset_right = 5.0
+offset_bottom = 5.0416718
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 10
+script = ExtResource("38_kimld")
+
+[node name="Gear3" type="Panel" parent="CanvasLayer/Gear/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Gear/MarginContainer/HBoxContainer/Gear3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("36_kimld")
+
+[node name="Lvl" type="Label" parent="CanvasLayer/Gear/MarginContainer/HBoxContainer/Gear3"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -5.999996
+offset_right = 5.0
+offset_bottom = 5.0416718
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 10
+script = ExtResource("38_kimld")
+
+[node name="Gear4" type="Panel" parent="CanvasLayer/Gear/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Gear/MarginContainer/HBoxContainer/Gear4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("36_kimld")
+
+[node name="Lvl" type="Label" parent="CanvasLayer/Gear/MarginContainer/HBoxContainer/Gear4"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -5.999996
+offset_right = 5.0
+offset_bottom = 5.0416718
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 10
+script = ExtResource("38_kimld")
+
 [node name="XP" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
@@ -2734,7 +3013,7 @@ offset_top = -27.0
 offset_right = 23.5
 offset_bottom = -9.333334
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_no8kt")
 text = "Lvl 10"
@@ -2980,7 +3259,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_trim_flags = 0
 
-[node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer/Leveling"]
+[node name="MainButtons" type="HBoxContainer" parent="CanvasLayer/Leveling"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -2994,7 +3273,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 30
 
-[node name="Skip" type="Button" parent="CanvasLayer/Leveling/VBoxContainer"]
+[node name="Skip" type="Button" parent="CanvasLayer/Leveling/MainButtons"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6901961, 0.23921569, 0, 1)
 theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
@@ -3006,7 +3285,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_pyn1s")
 text = "Skip"
 flat = true
 
-[node name="Confirm" type="Button" parent="CanvasLayer/Leveling/VBoxContainer"]
+[node name="Confirm" type="Button" parent="CanvasLayer/Leveling/MainButtons"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6901961, 0.23921569, 0, 1)
 theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
@@ -3017,6 +3296,1176 @@ theme_override_font_sizes/font_size = 56
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pyn1s")
 text = "Confirm"
 flat = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Leveling"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -294.0
+offset_top = -100.0
+offset_right = 294.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Leveling/MarginContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/h_separation = 14
+columns = 5
+
+[node name="WeaponSlot0" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+
+[node name="Button0" type="Button" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5brd2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yb0r4")
+
+[node name="Levels" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0/Button0"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 93.0
+offset_right = 72.0
+offset_bottom = 128.33333
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 24
+text = "Lvl 1 -> Lvl 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("41_sl775")
+
+[node name="AnimUpgrade" type="AnimationPlayer" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0/Button0/Levels"]
+root_node = NodePath("../../../PanelColor/Upgrade")
+libraries = {
+&"": SubResource("AnimationLibrary_kimld")
+}
+
+[node name="PanelColor" type="ColorRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Upgrade" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0/PanelColor"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -77.0
+offset_top = -29.5
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+text = "+1 Arrow"
+vertical_alignment = 1
+script = ExtResource("40_0nur5")
+
+[node name="Name" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0/PanelColor"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_right = 65.0
+offset_bottom = 34.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 24
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("40_gq5tr")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.517
+anchor_top = 0.347
+anchor_right = 0.517
+anchor_bottom = 0.347
+offset_left = -20.060005
+offset_top = -19.96
+offset_right = 19.939995
+offset_bottom = 20.04
+grow_horizontal = 2
+script = ExtResource("40_wpjs7")
+
+[node name="Costs" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0"]
+z_index = 5
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.5
+offset_right = 84.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sl775")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0/Costs"]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51100004
+anchor_top = 0.5
+anchor_right = 0.51100004
+anchor_bottom = 0.5
+offset_left = -36.980003
+offset_top = -17.75
+offset_right = 37.019997
+offset_bottom = 16.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="ItemSlot0" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0/Costs/GridContainer"]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0pcbe")
+script = ExtResource("43_5brd2")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0/Costs/GridContainer/ItemSlot0"]
+z_index = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.70000005
+offset_top = -0.70000005
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_0pcbe")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0/Costs/GridContainer/ItemSlot0"]
+z_index = 7
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.333313
+offset_top = -8.833332
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 8
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="NoItemMask" type="ColorRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0/Costs/GridContainer/ItemSlot0"]
+z_index = 6
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 32.999996
+color = Color(1, 0, 0, 0.3372549)
+
+[node name="ItemSlot1" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0/Costs/GridContainer"]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0pcbe")
+script = ExtResource("43_5brd2")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0/Costs/GridContainer/ItemSlot1"]
+z_index = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.70000005
+offset_top = -0.70000005
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_0pcbe")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0/Costs/GridContainer/ItemSlot1"]
+z_index = 7
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.333313
+offset_top = -8.833332
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 8
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="NoItemMask" type="ColorRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot0/Costs/GridContainer/ItemSlot1"]
+z_index = 6
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 32.999996
+color = Color(1, 0, 0, 0.3372549)
+
+[node name="WeaponSlot1" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+
+[node name="Button0" type="Button" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5brd2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yb0r4")
+
+[node name="Levels" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1/Button0"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 93.0
+offset_right = 72.0
+offset_bottom = 128.33333
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 24
+text = "Lvl 1 -> Lvl 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("41_sl775")
+
+[node name="AnimUpgrade" type="AnimationPlayer" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1/Button0/Levels"]
+root_node = NodePath("../../../PanelColor/Upgrade")
+libraries = {
+&"": SubResource("AnimationLibrary_kimld")
+}
+
+[node name="PanelColor" type="ColorRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Upgrade" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1/PanelColor"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -77.0
+offset_top = -29.5
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+text = "+1 Arrow"
+vertical_alignment = 1
+script = ExtResource("40_0nur5")
+
+[node name="Name" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1/PanelColor"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_right = 65.0
+offset_bottom = 34.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 24
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("40_gq5tr")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.517
+anchor_top = 0.347
+anchor_right = 0.517
+anchor_bottom = 0.347
+offset_left = -20.060005
+offset_top = -19.96
+offset_right = 19.939995
+offset_bottom = 20.04
+grow_horizontal = 2
+script = ExtResource("40_wpjs7")
+
+[node name="Costs" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1"]
+z_index = 5
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.5
+offset_right = 84.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sl775")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1/Costs"]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51100004
+anchor_top = 0.5
+anchor_right = 0.51100004
+anchor_bottom = 0.5
+offset_left = -36.980003
+offset_top = -17.75
+offset_right = 37.019997
+offset_bottom = 16.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="ItemSlot0" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1/Costs/GridContainer"]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0pcbe")
+script = ExtResource("43_5brd2")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1/Costs/GridContainer/ItemSlot0"]
+z_index = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.70000005
+offset_top = -0.70000005
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_0pcbe")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1/Costs/GridContainer/ItemSlot0"]
+z_index = 7
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.333313
+offset_top = -8.833332
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 8
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="NoItemMask" type="ColorRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1/Costs/GridContainer/ItemSlot0"]
+z_index = 6
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 32.999996
+color = Color(1, 0, 0, 0.3372549)
+
+[node name="ItemSlot1" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1/Costs/GridContainer"]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0pcbe")
+script = ExtResource("43_5brd2")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1/Costs/GridContainer/ItemSlot1"]
+z_index = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.70000005
+offset_top = -0.70000005
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_0pcbe")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1/Costs/GridContainer/ItemSlot1"]
+z_index = 7
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.333313
+offset_top = -8.833332
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 8
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="NoItemMask" type="ColorRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot1/Costs/GridContainer/ItemSlot1"]
+z_index = 6
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 32.999996
+color = Color(1, 0, 0, 0.3372549)
+
+[node name="WeaponSlot2" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+
+[node name="Button0" type="Button" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5brd2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yb0r4")
+
+[node name="Levels" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2/Button0"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 93.0
+offset_right = 72.0
+offset_bottom = 128.33333
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 24
+text = "Lvl 1 -> Lvl 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("41_sl775")
+
+[node name="AnimUpgrade" type="AnimationPlayer" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2/Button0/Levels"]
+root_node = NodePath("../../../PanelColor/Upgrade")
+libraries = {
+&"": SubResource("AnimationLibrary_kimld")
+}
+
+[node name="PanelColor" type="ColorRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Upgrade" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2/PanelColor"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -77.0
+offset_top = -29.5
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+text = "+1 Arrow"
+vertical_alignment = 1
+script = ExtResource("40_0nur5")
+
+[node name="Name" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2/PanelColor"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_right = 65.0
+offset_bottom = 34.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 24
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("40_gq5tr")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.517
+anchor_top = 0.347
+anchor_right = 0.517
+anchor_bottom = 0.347
+offset_left = -20.060005
+offset_top = -19.96
+offset_right = 19.939995
+offset_bottom = 20.04
+grow_horizontal = 2
+script = ExtResource("40_wpjs7")
+
+[node name="Costs" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2"]
+z_index = 5
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.5
+offset_right = 84.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sl775")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2/Costs"]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51100004
+anchor_top = 0.5
+anchor_right = 0.51100004
+anchor_bottom = 0.5
+offset_left = -36.980003
+offset_top = -17.75
+offset_right = 37.019997
+offset_bottom = 16.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="ItemSlot0" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2/Costs/GridContainer"]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0pcbe")
+script = ExtResource("43_5brd2")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2/Costs/GridContainer/ItemSlot0"]
+z_index = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.70000005
+offset_top = -0.70000005
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_0pcbe")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2/Costs/GridContainer/ItemSlot0"]
+z_index = 7
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.333313
+offset_top = -8.833332
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 8
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="NoItemMask" type="ColorRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2/Costs/GridContainer/ItemSlot0"]
+z_index = 6
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 32.999996
+color = Color(1, 0, 0, 0.3372549)
+
+[node name="ItemSlot1" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2/Costs/GridContainer"]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0pcbe")
+script = ExtResource("43_5brd2")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2/Costs/GridContainer/ItemSlot1"]
+z_index = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.70000005
+offset_top = -0.70000005
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_0pcbe")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2/Costs/GridContainer/ItemSlot1"]
+z_index = 7
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.333313
+offset_top = -8.833332
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 8
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="NoItemMask" type="ColorRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot2/Costs/GridContainer/ItemSlot1"]
+z_index = 6
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 32.999996
+color = Color(1, 0, 0, 0.3372549)
+
+[node name="WeaponSlot3" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+
+[node name="Button0" type="Button" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5brd2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yb0r4")
+
+[node name="Levels" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3/Button0"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 93.0
+offset_right = 72.0
+offset_bottom = 128.33333
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 24
+text = "Lvl 1 -> Lvl 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("41_sl775")
+
+[node name="AnimUpgrade" type="AnimationPlayer" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3/Button0/Levels"]
+root_node = NodePath("../../../PanelColor/Upgrade")
+libraries = {
+&"": SubResource("AnimationLibrary_kimld")
+}
+
+[node name="PanelColor" type="ColorRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Upgrade" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3/PanelColor"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -77.0
+offset_top = -29.5
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+text = "+1 Arrow"
+vertical_alignment = 1
+script = ExtResource("40_0nur5")
+
+[node name="Name" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3/PanelColor"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_right = 65.0
+offset_bottom = 34.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 24
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("40_gq5tr")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.517
+anchor_top = 0.347
+anchor_right = 0.517
+anchor_bottom = 0.347
+offset_left = -20.060005
+offset_top = -19.96
+offset_right = 19.939995
+offset_bottom = 20.04
+grow_horizontal = 2
+script = ExtResource("40_wpjs7")
+
+[node name="Costs" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3"]
+z_index = 5
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.5
+offset_right = 84.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sl775")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3/Costs"]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51100004
+anchor_top = 0.5
+anchor_right = 0.51100004
+anchor_bottom = 0.5
+offset_left = -36.980003
+offset_top = -17.75
+offset_right = 37.019997
+offset_bottom = 16.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="ItemSlot0" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3/Costs/GridContainer"]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0pcbe")
+script = ExtResource("43_5brd2")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3/Costs/GridContainer/ItemSlot0"]
+z_index = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.70000005
+offset_top = -0.70000005
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_0pcbe")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3/Costs/GridContainer/ItemSlot0"]
+z_index = 7
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.333313
+offset_top = -8.833332
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 8
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="NoItemMask" type="ColorRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3/Costs/GridContainer/ItemSlot0"]
+z_index = 6
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 32.999996
+color = Color(1, 0, 0, 0.3372549)
+
+[node name="ItemSlot1" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3/Costs/GridContainer"]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0pcbe")
+script = ExtResource("43_5brd2")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3/Costs/GridContainer/ItemSlot1"]
+z_index = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.70000005
+offset_top = -0.70000005
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_0pcbe")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3/Costs/GridContainer/ItemSlot1"]
+z_index = 7
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.333313
+offset_top = -8.833332
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 8
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="NoItemMask" type="ColorRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot3/Costs/GridContainer/ItemSlot1"]
+z_index = 6
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 32.999996
+color = Color(1, 0, 0, 0.3372549)
+
+[node name="WeaponSlot4" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+
+[node name="Button0" type="Button" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5brd2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yb0r4")
+
+[node name="Levels" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4/Button0"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 93.0
+offset_right = 72.0
+offset_bottom = 128.33333
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 24
+text = "Lvl 1 -> Lvl 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("41_sl775")
+
+[node name="AnimUpgrade" type="AnimationPlayer" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4/Button0/Levels"]
+root_node = NodePath("../../../PanelColor/Upgrade")
+libraries = {
+&"": SubResource("AnimationLibrary_kimld")
+}
+
+[node name="PanelColor" type="ColorRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Upgrade" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4/PanelColor"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -77.0
+offset_top = -29.5
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+text = "+1 Arrow"
+vertical_alignment = 1
+script = ExtResource("40_0nur5")
+
+[node name="Name" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4/PanelColor"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_right = 65.0
+offset_bottom = 34.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 24
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("40_gq5tr")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.517
+anchor_top = 0.347
+anchor_right = 0.517
+anchor_bottom = 0.347
+offset_left = -20.060005
+offset_top = -19.96
+offset_right = 19.939995
+offset_bottom = 20.04
+grow_horizontal = 2
+script = ExtResource("40_wpjs7")
+
+[node name="Costs" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4"]
+z_index = 5
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.5
+offset_right = 84.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sl775")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4/Costs"]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51100004
+anchor_top = 0.5
+anchor_right = 0.51100004
+anchor_bottom = 0.5
+offset_left = -36.980003
+offset_top = -17.75
+offset_right = 37.019997
+offset_bottom = 16.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="ItemSlot0" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4/Costs/GridContainer"]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0pcbe")
+script = ExtResource("43_5brd2")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4/Costs/GridContainer/ItemSlot0"]
+z_index = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.70000005
+offset_top = -0.70000005
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_0pcbe")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4/Costs/GridContainer/ItemSlot0"]
+z_index = 7
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.333313
+offset_top = -8.833332
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 8
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="NoItemMask" type="ColorRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4/Costs/GridContainer/ItemSlot0"]
+z_index = 6
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 32.999996
+color = Color(1, 0, 0, 0.3372549)
+
+[node name="ItemSlot1" type="Panel" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4/Costs/GridContainer"]
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0pcbe")
+script = ExtResource("43_5brd2")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4/Costs/GridContainer/ItemSlot1"]
+z_index = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.70000005
+offset_top = -0.70000005
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_0pcbe")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4/Costs/GridContainer/ItemSlot1"]
+z_index = 7
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.333313
+offset_top = -8.833332
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_no8kt")
+theme_override_font_sizes/font_size = 8
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="NoItemMask" type="ColorRect" parent="CanvasLayer/Leveling/MarginContainer/GridContainer/WeaponSlot4/Costs/GridContainer/ItemSlot1"]
+z_index = 6
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 32.999996
+color = Color(1, 0, 0, 0.3372549)
 
 [node name="Scroller" parent="." instance=ExtResource("1_8j60k")]
 script = null
@@ -3037,7 +4486,10 @@ position_smoothing_enabled = true
 [node name="ennemy_spawner" parent="BeaverSr/Camera2D" instance=ExtResource("3_5ukr8")]
 position = Vector2(3, -494)
 
-[node name="Ennemies" type="Node2D" parent="."]
+[node name="ennemy_spawner2" parent="BeaverSr/Camera2D" instance=ExtResource("3_5ukr8")]
+position = Vector2(-14, 524)
+
+[node name="Enemies" type="Node2D" parent="."]
 z_as_relative = false
 y_sort_enabled = true
 
@@ -3056,5 +4508,5 @@ y_sort_enabled = true
 [connection signal="pressed" from="CanvasLayer/Pause/VBoxContainer/Resume" to="CanvasLayer/Pause" method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/VBoxContainer/Commands" to="CanvasLayer/Pause" method="_on_commands_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/VBoxContainer/Quit to menu" to="CanvasLayer/Pause" method="_on_quit_to_menu_pressed"]
-[connection signal="pressed" from="CanvasLayer/Leveling/VBoxContainer/Skip" to="CanvasLayer/Leveling" method="_on_skip_pressed"]
-[connection signal="pressed" from="CanvasLayer/Leveling/VBoxContainer/Confirm" to="CanvasLayer/Leveling" method="_on_confirm_pressed"]
+[connection signal="pressed" from="CanvasLayer/Leveling/MainButtons/Skip" to="CanvasLayer/Leveling" method="_on_skip_pressed"]
+[connection signal="pressed" from="CanvasLayer/Leveling/MainButtons/Confirm" to="CanvasLayer/Leveling" method="_on_confirm_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dh2o1j6s8uxlw"]
 
-[ext_resource type="Script" uid="uid://bmlo7vrx1t5q3" path="res://Scripts/axe.gd" id="1_6yvxt"]
+[ext_resource type="Script" uid="uid://bmlo7vrx1t5q3" path="res://Scripts/WEAPONS/axe.gd" id="1_6yvxt"]
 [ext_resource type="Texture2D" uid="uid://bt72hplsdjxw6" path="res://Assets/weapons/axe.png" id="2_8edwl"]
 [ext_resource type="Resource" uid="uid://m78cavmqijx3" path="res://Resources/Weapons/axe.tres" id="2_dkanj"]
 
