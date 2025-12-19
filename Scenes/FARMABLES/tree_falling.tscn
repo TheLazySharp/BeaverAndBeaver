@@ -48,11 +48,11 @@ position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_fdxtt")
 
 [node name="DetectionZone" type="Area2D" parent="." groups=["ressources"]]
-visible = false
 collision_layer = 4096
 collision_mask = 16
 
 [node name="DetectionArea" type="CollisionShape2D" parent="DetectionZone"]
+visible = false
 position = Vector2(0, -36)
 shape = SubResource("CircleShape2D_5te5h")
 debug_color = Color(0.650404, 0.5191356, 0.073032714, 0.41960785)

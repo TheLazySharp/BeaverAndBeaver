@@ -93,13 +93,13 @@ func add_bullet_to_pool(bullet: StoneAmmo):
 func _on_fire_range_entered(area: Area2D) -> void:
 	if area.is_in_group("ennemies"):
 		targets.append(area)
-		print("enemy in range - total = ",targets.size())
+		#print("enemy in range - total = ",targets.size())
 
 
 func _on_fire_range_exited(area: Area2D) -> void:
 		if area.is_in_group("ennemies"):
 			targets.erase(area)
-			print("enemy exit - total = ",targets.size())
+			#print("enemy exit - total = ",targets.size())
 
 
 #func _on_fire_range_body_entered(body: Node2D) -> void:

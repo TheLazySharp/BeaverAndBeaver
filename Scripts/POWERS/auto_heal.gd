@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_healing_timer_timeout() -> void:
-	if "auto_heal" in beaver_sr and !game_paused:
+	if "auto_heal" in beaver_sr:
 		is_active = true
 		auto_heal(healing_power)
 	

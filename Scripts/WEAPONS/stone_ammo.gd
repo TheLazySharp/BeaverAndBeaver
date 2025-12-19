@@ -43,7 +43,7 @@ func fire(from_position: Vector2, direction: Vector2, angle: float) -> void:
 	trail.restart()
 	trail.show()
 	rotation = angle
-	print("stone shot")
+	#print("stone shot")
 
 
 func _physics_process(delta: float) -> void:

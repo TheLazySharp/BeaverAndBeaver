@@ -14,6 +14,9 @@ var time_remaining: float
 var critical_time: float = 0.1
 var hut_scene:= "uid://cs311xlcqlrt0"
 
+@onready var enemies_spawner_timer: Timer = $"../BeaverSr/Camera2D/ennemy_spawner/Timer"
+var enemies_spawner_base_rate: float
+
 signal day_ended(timer_stopped: bool)
 
 func _ready() -> void:
@@ -21,9 +24,12 @@ func _ready() -> void:
 	TimeManager.current_day +=1
 	gm_scene.game_paused.connect(_on_game_paused)
 	day_label.text = "DAY "+str(TimeManager.current_day)
+	enemies_spawner_base_rate = enemies_spawner_timer.wait_time
 
 
 func _process(delta: float) -> void:
+	
+	enemies_spawner_timer.wait_time = 0.5 + enemies_spawner_base_rate * (1 - time_remaining/TimeManager.day_lenght)
 	if game_paused or timer_stopped: return
 	
 	if time_remaining <= 0:

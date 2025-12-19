@@ -8,7 +8,7 @@ var speed: float = 40
 var player: Node = null
 
 @onready var target: Node2D = $"/root/World/BeaverSr"
-@onready var ennemy_spawner: Marker2D = $/root/World/BeaverSr/Camera2D/ennemy_spawner
+@onready var ennemy_spawner: Node2D = $/root/World/BeaverSr/Camera2D/ennemy_spawner
 
 @onready var gm_scene: Node = $"/root/World/game_manager"
 var game_paused:=false

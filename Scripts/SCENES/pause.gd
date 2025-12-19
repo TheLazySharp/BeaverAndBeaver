@@ -25,8 +25,8 @@ func _on_commands_pressed() -> void:
 	pass
 
 func _on_quit_to_menu_pressed() -> void:
-	SceneManager.load_level(menu_scene)
 	SceneManager.unload_game()
+	SceneManager.load_level(menu_scene)
 
 func get_focus():
 	resume.grab_focus()

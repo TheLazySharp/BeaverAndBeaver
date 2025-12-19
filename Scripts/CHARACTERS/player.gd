@@ -179,5 +179,5 @@ func auto_heal(life_up: int):
 	if current_life < max_life:
 		current_life += life_up
 		life_bar.value = current_life
-		print(current_life)
+		print("Beaver Sr healing up : ",current_life)
 	else : return

@@ -205,7 +205,7 @@ tests={
 2d_physics/layer_10="collectables"
 2d_physics/layer_11="weapons"
 2d_physics/layer_12="farmzone"
-2d_physics/layer_13="resource"
+2d_physics/layer_13="resourceRange"
 2d_physics/layer_14="weaponRange"
 
 [navigation]

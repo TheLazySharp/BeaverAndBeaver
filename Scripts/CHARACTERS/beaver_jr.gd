@@ -17,6 +17,8 @@ var farming_power:= 10
 @onready var radar: CollisionShape2D = $Radar/DetectionRange
 @onready var animated_sprite: AnimatedSprite2D = $Visuals/AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $Visuals/AnimationPlayer
+@onready var wood_vfx: GPUParticles2D = $Visuals/WoodVFX
+@onready var farm_spot: Marker2D = $FarmSpot
 
 @onready var beaver_sr: CharacterBody2D = $/root/World/BeaverSr
 var offset_pos: Vector2
@@ -24,14 +26,10 @@ var offset_pos: Vector2
 @onready var gm_scene: Node = $"/root/World/game_manager"
 var game_paused:=false
 
-@onready var wood_vfx: GPUParticles2D = $Visuals/WoodVFX
 
 var is_invincible:= false
-var is_going_to_farm := false
-var is_farming:= false
 var is_taking_damages:= false
 var is_being_healed:= false
-var is_idle:= true
 @export var back_to_pack_threshold: float = 0.3
 var is_coming_to_pack:= false
 
@@ -42,45 +40,82 @@ var is_coming_to_pack:= false
 
 var target_pos: Vector2
 
+var resources : Array[Area2D]
+
+enum States {PACKED, PACKING, FOLLOWING, GOING_TO_FARM, FARMING, WALKING_BACK}
+var state = States.PACKED
+var current_state
+
 func _ready() -> void:
 	max_life = 500
 	current_life = 300
 	gm_scene.game_paused.connect(_on_game_paused)
-	farmable_target = null
 	health_bar.min_value = 0
 	health_bar.max_value = max_life
 	health_bar.value = current_life
+	farmable_target = null
+	current_state = state
 
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_released("go_pack") or current_life < max_life * back_to_pack_threshold:
-		back_to_pack()
+	#print(state)
+	pass
+	
 
 		
 func _physics_process(_delta: float) -> void:
-	if abs(global_position - target_pos).length() < 3:
-		is_idle = true
-	else: 
-		is_idle = false
-		
-	if !is_idle and !is_farming:
-		animated_sprite.play("walk")
-	if is_idle or is_farming : 
-		animated_sprite.play("idle")
+	if state == null:
+		state = States.FOLLOWING
 	
-	if not is_going_to_farm:
+	if state == States.PACKED or state == States.FARMING:
+		animated_sprite.play("idle")
+		#print("idle")
+	if state != States.PACKED and state != States.FARMING: 
+		animated_sprite.play("walk")
+		#print("walking")
+	
+	if state == States.PACKED or state == States.FOLLOWING:
 		target_pos = beaver_sr.global_position + offset_pos
 		if abs(global_position - target_pos).length() < 3:
-			radar.set_deferred("disabled", false)
-			
+			state = States.PACKED
+		else : 
+			state = States.FOLLOWING
 
+	
+	
+	if Input.is_action_just_released("go_pack") or current_life < max_life * back_to_pack_threshold:
+		back_to_pack()
+		
+	
+	if state == States.PACKING:
+		radar.set_deferred("disabled", true)
+		target_pos = beaver_sr.global_position + offset_pos
+		if abs(global_position - target_pos).length() < 3:
+			state = States.PACKED
+		else : 
+			state = States.PACKING
+	
+	if state != States.PACKING:
+		radar.set_deferred("disabled", false)
+	
+	if !resources.is_empty() and state != States.FARMING:
+		target_pos = get_nearest_resource().get_child(1).global_position
+		farmable_target = get_nearest_resource().get_parent()
+		#print(farmable_target)
+		state = States.GOING_TO_FARM
+	
+	if resources.is_empty() and state != States.PACKING and abs(global_position - target_pos).length() > 3:
+		farmable_target = null
+		state = States.FOLLOWING
 
 	if !game_paused:
-		if !is_farming and !is_idle:
-			var direction = position.direction_to(target_pos)
-			velocity = velocity.move_toward(direction * speed, acceleration)
-			move_and_slide()
-
+		var direction = position.direction_to(target_pos)
+		velocity = velocity.move_toward(direction * speed, acceleration)
+		move_and_slide()
+	
+	
+	current_state = state
+	
 func _on_game_paused(game_on_pause) -> void:
 	game_paused = game_on_pause
 
@@ -88,63 +123,70 @@ func spawn(spawn_position: Vector2):
 	if not game_paused:
 		global_position = spawn_position
 		offset_pos = spawn_position - beaver_sr.position
-		print(offset_pos)
-		print("max life = ", max_life, "/ Current life = ", current_life)
 
 
 func _on_radar_area_entered(resource: Area2D) -> void:
-	if resource.get_collision_layer_value(13):
-		print("resource detected")
-		if !is_going_to_farm:
-			is_going_to_farm = true
-			is_invincible = true
-			target_pos = resource.get_child(1).global_position
-
-		if farmable_target == null:
-			farmable_target = resource.get_parent()
+	if resource.get_collision_layer_value(13) and resource.is_in_group("ressources") and state != States.PACKING:
+		resources.append(resource)
+		print("resource detected - resources = ",resources.size())
 
 
-func _on_radar_area_exited(_area: Area2D) -> void:
-	is_going_to_farm = false
-	is_farming = false
-	farming_timer.stop()
-	wood_vfx.emitting = false
-	wood_vfx.hide()
-	print("farming ended")
-	if not is_coming_to_pack:
-		radar.set_deferred("disabled", true)
-		radar.set_deferred("disabled", false)
+
+func _on_radar_area_exited(resource: Area2D) -> void:
+	if resource.get_collision_layer_value(13) and resource.is_in_group("ressources"):
+		resources.erase(resource)
+		print("resource exited - resources = ",resources.size())
+		farming_timer.stop()
+		wood_vfx.emitting = false
+		wood_vfx.hide()
+		print("farming ended")
+		state = States.FOLLOWING
 
 
-	
+func get_nearest_resource() -> Area2D:
+	if resources.is_empty(): return
+	var nearest_target = resources[0]
+	var shorter_distance = nearest_target.global_position.distance_squared_to(farm_spot.global_position)
+	for i in resources.size():
+		var target = resources[i]
+		var distance = target.global_position.distance_squared_to(farm_spot.global_position)
+		if distance < shorter_distance :
+			nearest_target = target
+			shorter_distance = distance
+	return nearest_target
 
 func farm() -> void:
-	if not game_paused:
+	if !game_paused and state == States.FARMING:
 		if farmable_target != null and "take_damages" in farmable_target:
+			#farmable_target.take_damages(farming_power)
 			#animated_sprite.play("idle")
-			print("farming")
 			farming_timer.start()
 			wood_vfx.restart()
 			wood_vfx.show()
-			is_farming = true
-			if is_farming:
-				farmable_target.take_damages(farming_power)
 
 func _on_farming_timer_timeout() -> void:
-	if farmable_target == null:
-		is_farming = false
-		return
-	elif "take_damages" in farmable_target:
-		farmable_target.take_damages(farming_power)
+	if state == States.FARMING:
+		if farmable_target == null:
+			state = States.FOLLOWING
+			return
+		elif "take_damages" in farmable_target:
+			print("farming")
+			farmable_target.take_damages(farming_power)
+
+func _on_collect_zone_entered(area: Area2D) -> void:
+	if area.is_in_group("collectables"):
+		XPManager.get_xp(1)
+		
+	if area.get_collision_layer_value(12) and state == States.GOING_TO_FARM:
+		state = States.FARMING
+		print("junior in farming area")
+		farm()
 
 func back_to_pack() -> void:
-	radar.set_deferred("disabled", true)
-	is_coming_to_pack = true
-	is_farming = false
-	is_going_to_farm = false
-	is_invincible = true
+	state = States.PACKING
+	resources.clear()
 	back_to_pack_speed = boost
-	#print("back to pack !!!")
+
 
 func process_healing(healing: int) -> void:
 	if not game_paused:
@@ -198,12 +240,3 @@ func display_damages(damages)-> void:
 		text.this_label_text = "- " +str(damages)
 		add_child(text)
 		text.global_position = Vector2(damages_text_pos.global_position.x + text_offsetX, damages_text_pos.global_position.y + text_offsetY)
-
-
-func _on_collect_zone_entered(area: Area2D) -> void:
-	if area.is_in_group("collectables"):
-		XPManager.get_xp(1)
-		
-	if area.get_collision_layer_value(12) and is_going_to_farm:
-		print("junior in farming area")
-		farm()

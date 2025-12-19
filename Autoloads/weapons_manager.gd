@@ -22,28 +22,23 @@ signal new_weapon_data(new_weapon: WeaponData, weapon_list : Array, weapon_show:
 func _ready() -> void:
 	XPManager.update_level.connect(shuffle_new_weapon)
 	load_weapons()
-	print("WEAPONS :")
-	for i in weapons.size():
-		print(weapons[i].weapon_name)
-	print("UNEQUIPPED :")
-	for i in unequipped_weapons.size():
-		print(unequipped_weapons[i].weapon_name)
+
 
 
 func load_weapons():
 	init_weapon(BOW)
 	init_weapon(ARROW)
 	locked_weapon(SLINGSHOT)
-	#locked_weapon(STONE_AMMO)
-	#locked_weapon(AXE)
-	#locked_weapon(AUTO_HEAL)
+	locked_weapon(AXE)
+	locked_weapon(AUTO_HEAL)
 	weapon_scenes.append(["bow", "uid://3g0m43hcvlsk", preload("uid://3g0m43hcvlsk")])
 	weapon_scenes.append(["arrow", "uid://bjuws4ysoivbu", preload("uid://bjuws4ysoivbu")])
 	weapon_scenes.append(["axe", "uid://dh2o1j6s8uxlw", preload("uid://dh2o1j6s8uxlw")])
 	weapon_scenes.append(["auto_heal", "uid://btqhj866y1b7a", preload("uid://btqhj866y1b7a")])
 	weapon_scenes.append(["slingshot", "uid://bf606njwyoo0l", preload("uid://bf606njwyoo0l")])
 	weapon_scenes.append(["stone", "uid://dww6b787qn3x0", preload("uid://dww6b787qn3x0")])
-	#print(weapon_scenes)
+	
+
 
 
 func copy_weapons() -> Array :
