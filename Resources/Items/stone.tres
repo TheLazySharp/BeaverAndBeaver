@@ -11,4 +11,4 @@ icon = ExtResource("1_m43qj")
 tileset_ID = 8
 tile_atlas_pos = Vector2i(1, 8)
 item_scene = ExtResource("2_lwbyh")
-quantity = 10
+quantity = 1000

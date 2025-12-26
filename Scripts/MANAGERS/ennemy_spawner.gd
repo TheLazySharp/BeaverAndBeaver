@@ -34,7 +34,7 @@ func _on_timer_timeout() -> void:
 		if r < 0.5 : random_spawn_point = spawn_point_0
 		else : random_spawn_point = spawn_point_1
 		pick_enemy_from_pool(Vector2(random_spawn_point.global_position.x + offsetX,random_spawn_point.global_position.y))
-		print("enemy spawn from ",random_spawn_point)
+		#print("enemy spawn from ",random_spawn_point)
 
 
 func pick_enemy_from_pool(starting_position: Vector2) -> void:
@@ -53,6 +53,7 @@ func create_enemies_pool(nb_enemies: int):
 func get_enemy_from_pool() -> Enemy:
 	var enemy : Enemy
 	if enemies_pool.is_empty():
+		print("enemy pool is empty")
 		create_enemies_pool(1)
 		enemy = enemies_pool[0]
 	else:

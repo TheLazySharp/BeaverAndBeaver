@@ -13,7 +13,7 @@ var current_lvl: int
 var max_lvl : int
 var can_shoot :=true
 
-var max_bullet_count : int = 200
+var max_bullet_count : int = 400
 var bullet_pool : Array[Bullet]
 var bullet_index : int = 0
 var bullet_spread_angle: float = 10
@@ -41,11 +41,15 @@ func shoot_from_pool()-> void :
 	can_shoot = false
 	timer.start()
 	var start_angle = -((nb_ammo - 1) * bullet_spread_angle) * .5
+	print("nb bullet before fire : ",bullet_pool.size())
 	for i in nb_ammo:
 		var angle : float = deg_to_rad(start_angle + i * bullet_spread_angle)
 		var bullet = get_bullet_from_pool()
 		var dir = Vector2.UP.rotated(angle)
 		bullet.fire(fire_point.global_position,dir,angle)
+		#print(i," / ",nb_ammo, " / ", bullet.visible)
+	print("nb bullet after fire : ",bullet_pool.size())
+
 
 func _on_fire_rate_timeout() -> void:
 	can_shoot = true
@@ -53,6 +57,7 @@ func _on_fire_rate_timeout() -> void:
 func get_bullet_from_pool() -> Bullet:
 	var bullet : Bullet
 	if bullet_pool.is_empty():
+		print("bullet pool empty")
 		create_bullet_pool(1)
 		bullet = bullet_pool[0]
 	else:

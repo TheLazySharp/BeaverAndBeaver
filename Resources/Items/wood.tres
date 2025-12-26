@@ -11,5 +11,5 @@ icon = ExtResource("1_g4adp")
 tileset_ID = 8
 tile_atlas_pos = Vector2i(6, 13)
 item_scene = ExtResource("2_oipia")
-quantity = 200
+quantity = 1000
 metadata/_custom_type_script = "uid://ctc62ptewno8k"

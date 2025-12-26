@@ -27,19 +27,20 @@ func _ready() -> void:
 	max_lvl = arrow_data.max_level
 
 func _process(_delta: float) -> void:
-	current_lvl = clampi(arrow_data.current_level,0,max_lvl)
-	damages = arrow_data.dmg + (current_lvl * .1 * 28) #améliorer la formule d'augmentation des dégats
+	pass
+	
 	
 
 
 func fire(from_position: Vector2, direction: Vector2, angle: float) -> void:
-	global_position = from_position
+	self.activate()
+	#self.show()
+	#set_physics_process(true)
+	#is_active = true
 	start_position = from_position
+	global_position = start_position
 	trail.global_position = global_position
 	velocity = direction.normalized() * speed
-	self.show()
-	is_active = true
-	set_physics_process(true)
 	trail.restart()
 	trail.show()
 	rotation = angle
@@ -69,10 +70,13 @@ func _on_area_hit(_area: Area2D) -> void:
 
 
 func _on_body_hit(body: Node2D) -> void:
-	if "get_damages" in body and body.is_in_group("ennemies") and is_active:
+	if "get_damages" in body and body.is_in_group("ennemies") and is_active and body.visible:
+		current_lvl = clampi(arrow_data.current_level,0,max_lvl)
+		damages = arrow_data.dmg + (current_lvl * .1 * 28) #améliorer la formule d'augmentation des dégats
 		body.get_damages(damages)
 		trail.emit_signal("finished")
 		desactivate()
+		#else : print("damagaes bug : ", damages)
 	else:
 		trail.emit_signal("finished")
 		desactivate()

@@ -29,7 +29,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
-	enemies_spawner_timer.wait_time = 0.5 + enemies_spawner_base_rate * (1 - time_remaining/TimeManager.day_lenght)
+	enemies_spawner_timer.wait_time = 0.3 + enemies_spawner_base_rate * (time_remaining/TimeManager.day_lenght)
 	if game_paused or timer_stopped: return
 	
 	if time_remaining <= 0:

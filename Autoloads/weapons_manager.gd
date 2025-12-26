@@ -63,13 +63,10 @@ func equip_weapon(new_weapon: WeaponData) -> void:
 			unequipped_weapons.remove_at(0)
 			
 			if new_weapon.weapon_ammo_res !=null and new_weapon.weapon_ammo_scene != null:
-				#var new_ammo_scene : Node2D = equip_ammo(new_weapon).instantiate()
-				#get_node("/root/World/BeaverSr/Weapons").add_child(new_ammo_scene)
 				init_weapon(new_weapon.weapon_ammo_res)
 				print(new_weapon.weapon_ammo_res.weapon_name," is equiped : ", new_weapon.weapon_ammo_res.is_equiped)
-				
 
-			
+
 			print(new_weapon.weapon_name," is equiped : ", new_weapon.is_equiped)
 			
 			print("MAJ WEAPONS :")
@@ -80,6 +77,8 @@ func equip_weapon(new_weapon: WeaponData) -> void:
 				print(unequipped_weapons[k].weapon_name)
 			if unequipped_weapons.is_empty() :
 				print("empty")
+			
+			return
 
 func equip_ammo(weapon_with_ammo: WeaponData) -> PackedScene:
 	var ammo : PackedScene = weapon_with_ammo.weapon_ammo_scene
